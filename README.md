@@ -1,19 +1,15 @@
-# Портфолио — 3 лендинга
+﻿# Портфолио — 3 лендинга
 
 Три одностраничных сайта с разным визуальным языком. Подходит для откликов на Kwork / FL / HH: живые демо + исходники.
 
 ## Демо
 
-После деплоя на GitHub Pages ссылки будут такими:
+- [Хаб](https://alexandr-mailru.github.io/landings-portfolio/)
+- [MORÉ — студия красоты](https://alexandr-mailru.github.io/landings-portfolio/01-more-studio/)
+- [ДОМЛИНИЯ — ремонт квартир](https://alexandr-mailru.github.io/landings-portfolio/02-domlinia/)
+- [Каюта — ресторан](https://alexandr-mailru.github.io/landings-portfolio/03-kayuta/)
 
-| Проект | Ниша | Стиль |
-|--------|------|--------|
-| [Хаб](https://USERNAME.github.io/REPO/) | — | оглавление |
-| [MORÉ](https://USERNAME.github.io/REPO/01-more-studio/) | студия красоты | тёмный люкс |
-| [ДОМЛИНИЯ](https://USERNAME.github.io/REPO/02-domlinia/) | ремонт квартир | светлый брутал |
-| [Каюта](https://USERNAME.github.io/REPO/03-kayuta/) | ресторан | мягкий морской свет |
-
-*(после публикации `USERNAME` и `REPO` заменятся на реальные — они же в настройках репозитория → Pages.)*
+Репозиторий: https://github.com/Alexandr-mailru/landings-portfolio
 
 ## Что внутри
 
@@ -25,8 +21,6 @@
 
 ## Локально
 
-Откройте `portfolio/index.html` или поднимите статический сервер из папки `portfolio`:
-
 ```bash
 npx --yes serve portfolio -p 5173
 ```
@@ -34,9 +28,6 @@ npx --yes serve portfolio -p 5173
 ## Структура
 
 ```
-portfolio/
-  index.html              # хаб со ссылками
-  01-more-studio/         # MORÉ
-  02-domlinia/            # ДОМЛИНИЯ
-  03-kayuta/              # Каюта
+portfolio/   # исходники для работы
+docs/        # копия для GitHub Pages
 ```
