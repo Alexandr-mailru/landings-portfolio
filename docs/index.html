@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Портфолио</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,27 +15,30 @@
       --line: #2a312c;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
     body {
-      min-height: 100vh;
+      min-height: 100svh;
       font-family: "Source Sans 3", system-ui, sans-serif;
       background:
         radial-gradient(ellipse 70% 45% at 0% 0%, #1a2a18, transparent 55%),
         radial-gradient(ellipse 50% 40% at 100% 10%, #152030, transparent 50%),
         var(--bg);
       color: var(--fg);
-      padding: 48px 24px 80px;
+      padding: max(32px, env(safe-area-inset-top)) clamp(16px, 4vw, 24px) max(64px, env(safe-area-inset-bottom));
+      overflow-x: clip;
     }
     .wrap { max-width: 980px; margin: 0 auto; }
     h1 {
       font-family: Syne, sans-serif;
       font-weight: 800;
-      font-size: clamp(2rem, 6vw, 3.3rem);
+      font-size: clamp(1.8rem, 7vw, 3.3rem);
       letter-spacing: -0.04em;
       line-height: 1.05;
-      margin-bottom: 40px;
+      margin-bottom: clamp(28px, 6vw, 40px);
     }
     .grid { display: grid; gap: 18px; }
-    @media (min-width: 720px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 560px) and (max-width: 899px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 900px) { .grid { grid-template-columns: repeat(3, 1fr); } }
     a.card {
       display: flex;
       flex-direction: column;

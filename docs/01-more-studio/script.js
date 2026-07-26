@@ -35,8 +35,25 @@ function hideCookieOnly() {
   cookie?.classList.remove("is-open");
 }
 
-menuBtn?.addEventListener("click", () => nav?.classList.toggle("open"));
-nav?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => nav.classList.remove("open")));
+function setMenuOpen(open) {
+  nav?.classList.toggle("open", open);
+  menuBtn?.setAttribute("aria-expanded", open ? "true" : "false");
+}
+
+menuBtn?.setAttribute("aria-expanded", "false");
+menuBtn?.addEventListener("click", () => setMenuOpen(!nav?.classList.contains("open")));
+nav?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenuOpen(false)));
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") setMenuOpen(false);
+});
+document.addEventListener("click", (e) => {
+  if (!nav?.classList.contains("open")) return;
+  if (nav.contains(e.target) || menuBtn?.contains(e.target)) return;
+  setMenuOpen(false);
+});
+window.addEventListener("resize", () => {
+  if (window.matchMedia("(min-width: 880px)").matches) setMenuOpen(false);
+});
 
 if (glow && matchMedia("(hover: hover) and (pointer: fine)").matches) {
   window.addEventListener("pointermove", (e) => {
