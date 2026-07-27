@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Мастерская домашней еды — учебный лендинг: рецепты, мастер-классы, демо-регистрация." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Борщ | Мастерская домашней еды</title>
+    <link rel="stylesheet" href="recipes_1_styles.css">
+    <link rel="stylesheet" href="legal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Souliyo+Unicode:wght@400;600&family=Vollkorn:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Кнопка мобильного меню -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                
+                <div class="logo">
+                    <a href="index.html"><img src="assets/logo.jpg" alt="Логотип Мастерская домашней еды"></a>
+                </div>
+                
+                <div class="nav-container" id="navContainer">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="recipes.html" class="active">Рецепты</a></li>
+                        <li><a href="master.html">Мастер-классы</a></li>
+                        <li><a href="index.html#gallery">Галерея</a></li>
+                    </ul>
+                </div>
+                
+                <button class="btn-register" id="openAuthModal">Регистрация</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Страница Рецепта -->
+    <main class="master-page">
+        <div class="container">
+            <a href="javascript:history.back()" class="arrow-container" title="Назад">
+                <svg class="arrow-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path class="arrow-path" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                </svg>
+            </a>
+            <h2>Рецепт №1</h2>
+            
+            <!-- Секция рецепта борща -->
+            <section class="master-section">
+                <div class="recipe-header">
+                    <h2>Борщ</h2>
+                    <p class="recipe-intro">Этот рецепт — не догма, а путеводитель. Мы разберем каждый этап, чтобы вы не просто сварили суп, а поняли его логику и смогли создать свой уникальный вкус.</p>
+                </div>
+                
+                <div class="recipe-layout">
+                    <div class="text-block ingredients-card">
+                        <div class="ingredients-title">
+                            <h2>Ингредиенты</h2>
+                            <p style="text-align:center; font-size: 16px; color:#666; margin-top:-15px; margin-bottom: 30px;">на кастрюлю 4-5 л</p>
+                        </div>
+
+                        <div class="ing-group">
+                            <h3>Для бульона</h3>
+                            <ul class="check-list">
+                                <li>Говядина — 600-800 г</li>
+                                <li>Луковица (целая, неочищенная) — 1 шт.</li>
+                                <li>Морковь (целая) — 1 шт. (небольшая)</li>
+                                <li>Перец горошком — 5-7 шт.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="ing-group">
+                            <h3>Для заправки и овощей</h3>
+                            <ul class="check-list">
+                                <li>Свёкла средняя — 2-3 шт.</li>
+                                <li>Морковь — 1-2 шт.</li>
+                                <li>Лук репчатый — 2 шт.</li>
+                                <li>Томатная паста (качественная) — 2-3 ст. л.</li>
+                                <li>Помидоры свежие или в собственном соку</li>
+                                <li>Капуста белокочанная — 250-300 г</li>
+                                <li>Картофель — 3-4 шт.</li>
+                                <li>Сахар, соль, черный перец — по вкусу</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="image-block image-block_2">
+                        <img src="assets/borsh.jpg" alt="Борщ">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="heart" data-id="borsh">
+                            <path d="M12 21.35l-.21-.02C7.53 20.29 2 14.67 2 8.54 2 5.42 4.42 3 7.54 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.54c0 6.13-5.53 11.75-10.29 12.81l-.21.02z"/>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Страница пошагового процесса -->
+            <div class="process-section">
+                <div class="process-header">
+                    <h3>Пошаговый процесс</h3>
+                    <p style="text-align:center; color:#777; font-style:italic; margin-top:-10px;">Философия вкуса в трех актах</p>
+                </div>
+                
+                <div class="steps-grid">
+                    <!-- Шаг 1 -->
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <div class="step-title">
+                            <span>Фундамент — душа борща</span>
+                        </div>
+                        <span class="step-subtitle">Бульон</span>
+                        
+                        <div class="step-content">
+                            <ol>
+                                <li>Мясо промойте, положите в холодную воду. Это ключ: белки постепенно нагреваются и отдают сок в бульон, делая его насыщенным.</li>
+                                <li>Доведите до кипения на среднем огне, аккуратно снимите серую пену шумовкой. Не давайте бурно кипеть! После закипания убавьте огонь до минимума.</li>
+                                <li>Добавьте целые, тщательно вымытые, но неочищенные овощи (лук с шелухой, морковь). Шелуха даст красивый золотистый оттенок. Варите бульон под приоткрытой крышкой 1.5-2 часа, пока мясо не станет очень мягким.</li>
+                                <li>За 10 минут до готовности добавьте лавровый лист и перец горошком. Готовый бульон процедите, мясо отделите от кости и нарежьте кусочками. Бульон верните в чистую кастрюлю.</li>
+                            </ol>
+                        </div>
+                    </div>
+        
+                    <!-- Шаг 2 -->
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <div class="step-title">
+                            <span>Магия цвета и сладости</span>
+                        </div>
+                        <span class="step-subtitle">Работа со свёклой</span>
+                        
+                        <div class="step-content">
+                            <ol>
+                                <li>Свёклу натрите на крупной терке или нарежьте тонкой соломкой.</li>
+                                <li>На сковороде разогрейте сало (оно даст аутентичный вкус) или масло. Обжарьте свёклу 5-7 минут на среднем огне.</li>
+                                <li>Добавьте 1 ст.л. томатной пасты, перемешайте и обжаривайте еще 2 минуты. Томат «привяжет» цвет.</li>
+                            </ol>
+                        </div>
+                    </div>
+        
+                    <!-- Шаг 3 -->
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <div class="step-title">
+                            <span>Ароматная основа</span>
+                        </div>
+                        <span class="step-subtitle">Зажарка</span>
+                        
+                        <div class="step-content">
+                            <ol>
+                                <li>На отдельной сковороде обжарьте нарезанный кубиками лук до прозрачности.</li>
+                                <li>Добавьте натертую морковь, обжаривайте вместе до мягкости.</li>
+                                <li>Добавьте оставшуюся томатную пасту и/или мелко нарезанные свежие помидоры. Прогрейте все вместе 3-5 минут. Теперь у нас готова овощная заправка.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chef-note">
+                <p>Борщ — живой. Он меняется на второй и третий день, становясь только вкуснее. Не бойтесь экспериментировать с пропорциями специй, видов капусты (можно добавить немного кислой) и видами мяса (отлично работает смесь говядины и свинины). Сварите свой идеал.</p>
+            </div>
+
+            <div class="images-grid">
+                <div class="image-item image-item_1">
+                    <img src="assets/borsh_1.jpg" alt="Блюдо 1">
+                </div>
+                <div class="image-item image-item_2">
+                    <img src="assets/borsh_2.jpg" alt="Блюдо 2">
+                </div>
+                <div class="image-item image-item_3">
+                    <img src="assets/borsh_3.jpg" alt="Блюдо 3">
+                </div>
+                <div class="image-item image-item_4">
+                    <img src="assets/borsh_4.jpg" alt="Блюдо 4">
+                </div>
+                <div class="image-item image-item_5">
+                    <img src="assets/borsh_5.jpg" alt="Блюдо 5">
+                </div>
+                <div class="image-item image-item_6">
+                    <img src="assets/borsh_6.jpg" alt="Блюдо 6">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html"><img src="assets/logo.jpg" alt="Логотип"></a>
+                </div>
+
+                <div class="footer-info">
+                    <div class="info-column">
+                        <h4>Контакты:</h4>
+                        <ul>
+                            <li>сообщество в телеграм</li>
+                            <li>сообщество во вконтакте</li>
+                            <li>партнеры</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-column">
+                        <h4>Помощь:</h4>
+                        <ul>
+                            <li>оплата</li>
+                            <li>возврат</li>
+                            <li><a href="privacy.html">политика конфиденциальности</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-column">
+                        <h4></h4><br>
+                        <ul>
+                            <li>+7 (900) 000-00-00</li>
+                            <li>demo@example.com</li>
+                            <li>Демо-проект для портфолио</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Мастерская домашней еды. Учебный проект для портфолио.</p>
+                    <p class="footer-demo-note">Регистрация демо: данные не уходят на сервер.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно авторизации -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Вход/регистрация</h2>
+            </div>
+            <form class="modal-form" id="authForm">
+                <input type="tel" class="modal-input" placeholder="Введите номер телефона" required>
+                <input type="password" class="modal-input" placeholder="Пароль" required>
+                <a href="#" class="modal-link" id="switchToRegister">Зарегистрироваться?</a>
+                <button type="submit" class="modal-btn">Далее</button>
+            </form>
+            <div class="modal-close" id="closeAuthModal">&times;</div>
+        </div>
+    </div>
+
+    <!-- Модальное окно регистрации -->
+    <div class="modal-overlay" id="registerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Регистрация</h2>
+            </div>
+            <form class="modal-form" id="registerForm">
+                <input type="tel" class="modal-input" placeholder="Введите номер телефона" required>
+                <input type="password" class="modal-input" placeholder="Придумайте пароль" required>
+                
+                <label class="consent-check">
+                    <input type="checkbox" id="regConsent" required>
+                    <span>Согласен(на) на <a href="privacy.html" target="_blank" rel="noopener">обработку персональных данных</a> (демо: только в браузере)</span>
+                </label>
+                <div class="error-message" id="regConsentError"></div>
+
+                <button type="submit" class="modal-btn">Зарегистрироваться</button>
+            </form>
+            <div class="modal-close" id="closeRegisterModal">&times;</div>
+        </div>
+    </div>
+
+    <script>
+        // === Функции аутентификации ===
+        function initAuth() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const authButton = document.getElementById('openAuthModal');
+            if (authButton) {
+                if (isLoggedIn) {
+                    authButton.textContent = 'Выход';
+                    authButton.classList.remove('btn-register');
+                    authButton.classList.add('logout-btn');
+                } else {
+                    authButton.textContent = 'Регистрация';
+                    authButton.classList.remove('logout-btn');
+                    authButton.classList.add('btn-register');
+                }
+            }
+            return isLoggedIn;
+        }
+
+        function setLoggedIn(isLoggedIn) {
+            localStorage.setItem('isLoggedIn', isLoggedIn.toString());
+            initAuth();
+        }
+
+        function isLoggedIn() {
+            return localStorage.getItem('isLoggedIn') === 'true';
+        }
+
+        function openModal(modal) {
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modal) {
+            if (modal) {
+                modal.style.display = 'none';
+                if (window.innerWidth <= 768) {
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        }
+
+        // === Основной обработчик ===
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+
+            // ==========================================
+            // 📱 МОБИЛЬНОЕ МЕНЮ
+            // ==========================================
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navContainer = document.getElementById('navContainer');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            if (mobileMenuBtn && navContainer) {
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const isActive = navContainer.classList.contains('active');
+                    if (isActive) {
+                        navContainer.classList.remove('active');
+                        this.innerHTML = '☰';
+                        setTimeout(() => { navContainer.style.display = 'none'; }, 300);
+                        document.body.style.overflow = 'auto';
+                    } else {
+                        navContainer.style.display = 'flex';
+                        setTimeout(() => { navContainer.classList.add('active'); }, 10);
+                        this.innerHTML = '✕';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768 && navContainer) {
+                        setTimeout(() => {
+                            navContainer.classList.remove('active');
+                            setTimeout(() => { navContainer.style.display = 'none'; }, 300);
+                            document.body.style.overflow = 'auto';
+                        }, 300);
+                        if (mobileMenuBtn) mobileMenuBtn.innerHTML = '☰';
+                    }
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768 && navContainer && navContainer.classList.contains('active')) {
+                    const isClickInsideMenu = navContainer.contains(e.target);
+                    const isClickOnBtn = mobileMenuBtn && mobileMenuBtn.contains(e.target);
+                    if (!isClickInsideMenu && !isClickOnBtn) {
+                        navContainer.classList.remove('active');
+                        setTimeout(() => { navContainer.style.display = 'none'; }, 300);
+                        document.body.style.overflow = 'auto';
+                        if (mobileMenuBtn) mobileMenuBtn.innerHTML = '☰';
+                    }
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    if (navContainer) { 
+                        navContainer.style.display = ''; 
+                        navContainer.classList.remove('active'); 
+                    }
+                    if (mobileMenuBtn) mobileMenuBtn.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                } else {
+                    if (navContainer) navContainer.style.display = 'none';
+                    if (mobileMenuBtn) mobileMenuBtn.style.display = '';
+                }
+            });
+
+            if (window.innerWidth > 768 && mobileMenuBtn) {
+                mobileMenuBtn.style.display = 'none';
+            }
+
+            // ==========================================
+            // 🔐 Модальные окна
+            // ==========================================
+            const authButton = document.getElementById('openAuthModal');
+            if (authButton) {
+                authButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (isLoggedIn()) {
+                        setLoggedIn(false);
+                        alert('Вы успешно вышли из аккаунта');
+                    } else {
+                        openModal(document.getElementById('authModal'));
+                    }
+                });
+            }
+
+            const loginModal = document.getElementById('authModal');
+            const registerModal = document.getElementById('registerModal');
+            const closeLoginModalBtn = document.getElementById('closeAuthModal');
+            const closeRegisterModalBtn = document.getElementById('closeRegisterModal');
+            const switchToRegisterLink = document.getElementById('switchToRegister');
+
+            if (closeLoginModalBtn) closeLoginModalBtn.addEventListener('click', () => closeModal(loginModal));
+            if (closeRegisterModalBtn) closeRegisterModalBtn.addEventListener('click', () => closeModal(registerModal));
+            if (loginModal) loginModal.addEventListener('click', e => { if (e.target === loginModal) closeModal(loginModal); });
+            if (registerModal) registerModal.addEventListener('click', e => { if (e.target === registerModal) closeModal(registerModal); });
+            if (switchToRegisterLink) {
+                switchToRegisterLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    closeModal(loginModal);
+                    openModal(registerModal);
+                });
+            }
+
+            const loginForm = document.getElementById('authForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    setLoggedIn(true);
+                    closeModal(loginModal);
+                    alert('Вы успешно вошли в аккаунт');
+                });
+            }
+
+            const registerForm = document.getElementById('registerForm');
+            if (registerForm) {
+                registerForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    setLoggedIn(true);
+                    closeModal(registerModal);
+                    alert('Регистрация завершена! Вы успешно вошли в аккаунт');
+                });
+            }
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal(loginModal);
+                    closeModal(registerModal);
+                    if (navContainer && navContainer.classList.contains('active')) {
+                        navContainer.classList.remove('active');
+                        setTimeout(() => { navContainer.style.display = 'none'; }, 300);
+                        document.body.style.overflow = 'auto';
+                        if (mobileMenuBtn) mobileMenuBtn.innerHTML = '☰';
+                    }
+                }
+            });
+
+            // ==========================================
+            // ❤️ Избранное
+            // ==========================================
+            function initFavorites() {
+                const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                const hearts = document.querySelectorAll('.heart');
+                hearts.forEach(heart => {
+                    const recipeId = heart.dataset.id;
+                    if (favorites.includes(recipeId)) {
+                        heart.classList.add('favorited');
+                    }
+                });
+            }
+
+            function toggleFavorite(event) {
+                const heart = event.currentTarget;
+                const recipeId = heart.dataset.id;
+                let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                
+                if (heart.classList.contains('favorited')) {
+                    heart.classList.remove('favorited');
+                    favorites = favorites.filter(id => id !== recipeId);
+                } else {
+                    heart.classList.add('favorited');
+                    favorites.push(recipeId);
+                }
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+            }
+
+            initFavorites();
+            document.querySelectorAll('.heart').forEach(heart => {
+                heart.addEventListener('click', toggleFavorite);
+            });
+
+            // ==========================================
+            // 🔙 Стрелка назад
+            // ==========================================
+            const arrowContainer = document.querySelector('.arrow-container');
+            if (arrowContainer) {
+                arrowContainer.style.cursor = 'pointer';
+                arrowContainer.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (window.history.length > 1) {
+                        window.history.back();
+                    } else {
+                        window.location.href = 'home.html';
+                    }
+                });
+            }
+        });
+    </script>
+
+    <div class="cookie" data-cookie hidden role="dialog" aria-label="Уведомление о cookie">
+        <p>Используем <code>localStorage</code> для демо-входа и избранного. Подробнее — в <a href="privacy.html">политике</a>.</p>
+        <button type="button" data-cookie-ok>Понятно</button>
+    </div>
+    <script src="cookie.js" defer></script>
+
+</body>
+</html>

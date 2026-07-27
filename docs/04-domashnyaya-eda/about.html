@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Мастерская домашней еды — учебный лендинг: рецепты, мастер-классы, демо-регистрация." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас | Мастерская домашней еды</title>
+    <link rel="stylesheet" href="about_styles.css">
+    <link rel="stylesheet" href="legal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Souliyo+Unicode:wght@400;600&family=Vollkorn:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- 🔹 Кнопка мобильного меню (добавлено) -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                
+                <div class="logo">
+                    <a href="index.html"><img src="assets/logo.jpg" alt="Логотип Мастерская домашней еды"></a>
+                </div>
+                
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html" class="active">О нас</a></li>
+                        <li><a href="recipes.html">Рецепты</a></li>
+                        <li><a href="master.html">Мастер-классы</a></li>
+                        <li><a href="index.html#gallery">Галерея</a></li>
+                    </ul>
+                </div>
+                
+                <button class="btn-register" id="openAuthModal">Регистрация</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Страница О нас -->
+    <main class="master-page">
+        <div class="container">
+            <a href="javascript:history.back()" class="arrow-container" title="Назад">
+                <svg class="arrow-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path class="arrow-path" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                </svg>
+            </a>
+            <h2>О нас</h2>
+            
+            <div class="image-block_1">
+                <img src="assets/cooking.jpg" alt="О нас">
+            </div>
+        </div>
+
+        <div class="conclusion-container">
+            <!-- Вступление -->
+            <div class="intro-lead">
+                <p>От будней к праздникам. Мы знаем цену каждому дню. Поэтому учим, как быстро и вкусно приготовить ужин после работы.</p>
+            </div>
+        
+            <!-- Сетка преимуществ (3 колонки) -->
+            <div class="features-grid">
+                <div class="feature-box">
+                    <h3>Кулинарные мастер-классы</h3>
+                    <p>Онлайн-уроки для всех уровней — от первых шагов на кухне до техник для продвинутых. Каждый урок построен так, чтобы вы не просто повторили рецепт, а поняли логику процесса и смогли импровизировать в будущем.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Авторские рецепты и блоги</h3>
+                    <p>Вдохновение, подробные инструкции и истории о еде, которые хочется готовить снова и снова. Мы рассказываем не только «как», но и «почему»: откуда пошло блюдо, чем заменить ингредиенты без потери вкуса и как превратить обычный ужин в маленький ритуал.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Разработка меню</h3>
+                    <p>Поможем составить идеальное меню для вашего особого дня — от свадьбы до детского дня рождения. Учитываем бюджет, сезонность продуктов, ограничения и время. Вы получаете четкий план с таймингом и списком покупок.</p>
+                </div>
+            </div>
+        
+            <!-- Блок "О нас" с акцентом -->
+            <div class="story-block">
+                <h3>Наша история</h3>
+                <p>Мы создали это пространство для любителей вкусной жизни в 2025 году, объединив профессиональных шеф-поваров, диетологов и увлеченных кулинаров.</p>
+                <p>Наша команда находится в сердце гастрономической столицы — <strong>Санкт-Петербурге</strong>. Здесь, между Невским проспектом и набережными, мы тестируем каждый рецепт, чтобы он получился идеальным даже на самой маленькой кухне-хрущевке.</p>
+                <p class="quote">«Мы верим, что готовить просто — когда рядом есть надежный проводник в мир вкуса.»</p>
+            </div>
+        
+            <!-- Список отличий -->
+            <div class="advantages-list">
+                <h3>Что нас отличает?</h3>
+                <ul>
+                    <li>
+                        <span class="icon">✓</span>
+                        <div>
+                            <strong>Доступность без компромиссов</strong>
+                            <p>Мы используем продукты, которые легко найти в обычном супермаркете.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">✓</span>
+                        <div>
+                            <strong>Поддержка 24/7</strong>
+                            <p>В закрытом чате участники могут задать вопрос в процессе готовки и получить ответ в реальном времени.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">✓</span>
+                        <div>
+                            <strong>Авторский подход</strong>
+                            <p>Адаптируем рецепты под реалии современной кухни: мультиварки, аэрогрили, плотный график и маленькие холодильники.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        
+            <!-- Финальный призыв -->
+            <div class="final-cta">
+                <p>Присоединяйтесь к нашему гастрономическому сообществу: будни станут ярче, а праздники — еще вкуснее!</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html"><img src="assets/logo.jpg" alt="Логотип"></a>
+                </div>
+
+                <div class="footer-info">
+                    <div class="info-column">
+                        <h4>Контакты:</h4>
+                        <ul>
+                            <li>сообщество в телеграм</li>
+                            <li>сообщество во вконтакте</li>
+                            <li>партнеры</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-column">
+                        <h4>Помощь:</h4>
+                        <ul>
+                            <li>оплата</li>
+                            <li>возврат</li>
+                            <li><a href="privacy.html">политика конфиденциальности</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-column">
+                        <h4></h4><br>
+                        <ul>
+                            <li>+7 (900) 000-00-00</li>
+                            <li>demo@example.com</li>
+                            <li>Демо-проект для портфолио</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Мастерская домашней еды. Учебный проект для портфолио.</p>
+                    <p class="footer-demo-note">Регистрация демо: данные не уходят на сервер.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- === УВЕДОМЛЕНИЕ ОБ УСПЕХЕ === -->
+    <div class="success-notification" id="successNotification">
+        <!-- Иконка галочки (SVG) -->
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNEJBRjUwIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTIyIDExLjA4VjEyYTEwIDEwIDAgMSAxLTUuOTMtOS4xNCIvPjxwb2x5bGluZSBwb2ludHM9IjIyIDQgMTIgMTQuMDEgOSAxNy4wMSIvPjwvc3ZnPg==" alt="Success">
+        <div class="success-notification-text">
+            <span id="notificationTitle">Успешно!</span>
+            <span id="notificationSubtitle">Перенаправление...</span>
+        </div>
+    </div>
+
+    <!-- Модальное окно авторизации -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Вход/регистрация</h2>
+            </div>
+    
+            <form class="modal-form" id="authForm" novalidate>
+                <input type="tel" class="modal-input" id="loginPhone" placeholder="Введите номер телефона" required>
+                <div class="error-message" id="loginPhoneError"></div>
+                
+                <input type="password" class="modal-input" id="loginPassword" placeholder="Пароль" required>
+                <div class="error-message" id="loginPasswordError"></div>
+                
+                <a href="#" class="modal-link" id="switchToRegister">Зарегистрироваться?</a>
+                
+                <button type="submit" class="modal-btn">Далее</button>
+            </form>
+
+            <div class="modal-close" id="closeAuthModal">&times;</div>
+        </div>
+    </div>
+
+    <!-- Модальное окно регистрации -->
+    <div class="modal-overlay" id="registerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Регистрация</h2>
+            </div>
+
+            <form class="modal-form" id="registerForm" novalidate>
+                <input type="tel" class="modal-input" id="regPhone" placeholder="Введите номер телефона" required>
+                <div class="error-message" id="regPhoneError"></div>
+                
+                <input type="password" class="modal-input" id="regPassword" placeholder="Придумайте пароль" required>
+                <div class="error-message" id="regPasswordError"></div>
+                
+                
+                <label class="consent-check">
+                    <input type="checkbox" id="regConsent" required>
+                    <span>Согласен(на) на <a href="privacy.html" target="_blank" rel="noopener">обработку персональных данных</a> (демо: только в браузере)</span>
+                </label>
+                <div class="error-message" id="regConsentError"></div>
+
+                <button type="submit" class="modal-btn">Зарегистрироваться</button>
+            </form>
+
+            <div class="modal-close" id="closeRegisterModal">&times;</div>
+        </div>
+    </div>
+
+    <script>
+        // === ГЛОБАЛЬНЫЕ ФУНКЦИИ ВАЛИДАЦИИ ===
+        function cleanPhone(phone) { return phone.replace(/[^0-9+]/g, ''); }
+        function formatPhone(phone) {
+            let cleaned = cleanPhone(phone);
+            if (cleaned.startsWith('8')) cleaned = '7' + cleaned.slice(1);
+            if (!cleaned.startsWith('+7')) {
+                if (cleaned.startsWith('7')) cleaned = '+7' + cleaned.slice(1);
+                else cleaned = '+7' + cleaned;
+            }
+            return cleaned;
+        }
+        function isValidPhone(phone) { return /^\+7\d{10}$/.test(formatPhone(phone)); }
+        function isValidPassword(password) { return password.length >= 6; }
+
+        // Работа с базой пользователей
+        function getUsers() {
+            const users = localStorage.getItem('users');
+            return users ? JSON.parse(users) : [];
+        }
+        function saveUser(phone, password) {
+            const users = getUsers();
+            if (users.some(user => user.phone === phone)) return false;
+            users.push({ phone, password });
+            localStorage.setItem('users', JSON.stringify(users));
+            return true;
+        }
+        function checkCredentials(phone, password) {
+            return getUsers().some(user => user.phone === phone && user.password === password);
+        }
+
+        // === ФУНКЦИИ АВТОРИЗАЦИИ ===
+        function initAuth() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const authButton = document.getElementById('openAuthModal');
+            if (authButton) {
+                if (isLoggedIn) {
+                    authButton.textContent = 'Выход';
+                    authButton.classList.remove('btn-register');
+                    authButton.classList.add('logout-btn');
+                } else {
+                    authButton.textContent = 'Регистрация';
+                    authButton.classList.remove('logout-btn');
+                    authButton.classList.add('btn-register');
+                }
+            }
+            return isLoggedIn;
+        }
+        
+        function setLoggedIn(isLoggedIn) {
+            localStorage.setItem('isLoggedIn', isLoggedIn.toString());
+            initAuth();
+        }
+        function isLoggedIn() { return localStorage.getItem('isLoggedIn') === 'true'; }
+        
+        function openModal(modal) {
+            if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+        }
+        function closeModal(modal) {
+            if (modal) {
+                modal.style.display = 'none';
+                if (window.innerWidth <= 768) document.body.style.overflow = 'auto';
+            }
+        }
+
+        // === ФУНКЦИИ ОШИБОК И УВЕДОМЛЕНИЙ ===
+        function showError(inputId, errorId, message) {
+            const input = document.getElementById(inputId);
+            const errorDiv = document.getElementById(errorId);
+            if (input && errorDiv) {
+                input.classList.add('error');
+                errorDiv.textContent = message;
+                errorDiv.classList.add('visible');
+            }
+        }
+        function clearErrors(formId) {
+            const form = document.getElementById(formId);
+            if (!form) return;
+            form.querySelectorAll('.modal-input').forEach(i => i.classList.remove('error'));
+            form.querySelectorAll('.error-message').forEach(e => { e.textContent = ''; e.classList.remove('visible'); });
+        }
+
+        // Функция для показа красивого уведомления
+        function showSuccessNotification(title, subtitle, callback) {
+            const notification = document.getElementById('successNotification');
+            const titleEl = document.getElementById('notificationTitle');
+            const subEl = document.getElementById('notificationSubtitle');
+            
+            titleEl.textContent = title;
+            subEl.textContent = subtitle;
+            
+            // Показываем
+            notification.classList.add('active');
+            
+            // Ждем 3 секунды, затем выполняем действие
+            setTimeout(() => {
+                notification.classList.remove('active');
+                setTimeout(() => {
+                    if (callback) callback();
+                }, 500);
+            }, 3000);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initAuth();
+        
+            // ==========================================
+            // МОБИЛЬНОЕ МЕНЮ
+            // ==========================================
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navContainer = document.querySelector('.nav-container');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            if (mobileMenuBtn && navContainer) {
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.preventDefault(); e.stopPropagation();
+                    const isActive = navContainer.classList.contains('active');
+                    if (isActive) {
+                        navContainer.classList.remove('active');
+                        this.innerHTML = '☰';
+                        setTimeout(() => { navContainer.style.display = 'none'; }, 300);
+                        document.body.style.overflow = 'auto';
+                    } else {
+                        navContainer.style.display = 'flex';
+                        navContainer.classList.add('active');
+                        this.innerHTML = '✕';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            }
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768 && navContainer) {
+                        setTimeout(() => {
+                            navContainer.classList.remove('active');
+                            setTimeout(() => { navContainer.style.display = 'none'; }, 300);
+                            document.body.style.overflow = 'auto';
+                        }, 500);
+                        if (mobileMenuBtn) mobileMenuBtn.innerHTML = '☰';
+                    }
+                });
+            });
+            
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768 && navContainer && navContainer.classList.contains('active')) {
+                    if (!navContainer.contains(e.target) && !(mobileMenuBtn && mobileMenuBtn.contains(e.target))) {
+                        navContainer.classList.remove('active');
+                        setTimeout(() => { navContainer.style.display = 'none'; }, 300);
+                        document.body.style.overflow = 'auto';
+                        if (mobileMenuBtn) mobileMenuBtn.innerHTML = '☰';
+                    }
+                }
+            });
+            
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    if (navContainer) { navContainer.style.display = ''; navContainer.classList.remove('active'); }
+                    if (mobileMenuBtn) mobileMenuBtn.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                } else {
+                    if (navContainer) navContainer.style.display = 'none';
+                    if (mobileMenuBtn) mobileMenuBtn.style.display = '';
+                }
+            });
+            if (window.innerWidth > 768 && mobileMenuBtn) mobileMenuBtn.style.display = 'none';
+        
+            // ==========================================
+            // ОБРАБОТЧИКИ МОДАЛЬНЫХ ОКОН
+            // ==========================================
+            const authButton = document.getElementById('openAuthModal');
+            if (authButton) {
+                authButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (isLoggedIn()) {
+                        // === ИЗМЕНЕНИЕ ЗДЕСЬ: Уведомление при выходе ===
+                        setLoggedIn(false); // Сначала сбрасываем статус
+                        // Показываем уведомление, затем перезагружаем
+                        showSuccessNotification('Выход выполнен', 'Вы успешно вышли из аккаунта.', () => {
+                            location.reload();
+                        });
+                    } else {
+                        clearErrors('authForm'); clearErrors('registerForm');
+                        openModal(document.getElementById('authModal'));
+                    }
+                });
+            }
+        
+            const loginModal = document.getElementById('authModal');
+            const registerModal = document.getElementById('registerModal');
+            const closeLoginModalBtn = document.getElementById('closeAuthModal');
+            const closeRegisterModalBtn = document.getElementById('closeRegisterModal');
+            const switchToRegisterLink = document.getElementById('switchToRegister');
+
+            if (closeLoginModalBtn) closeLoginModalBtn.addEventListener('click', () => { closeModal(loginModal); setTimeout(()=>location.reload(), 100); });
+            if (closeRegisterModalBtn) closeRegisterModalBtn.addEventListener('click', () => { closeModal(registerModal); setTimeout(()=>location.reload(), 100); });
+            
+            if (loginModal) loginModal.addEventListener('click', e => { if (e.target === loginModal) { closeModal(loginModal); setTimeout(()=>location.reload(), 100); } });
+            if (registerModal) registerModal.addEventListener('click', e => { if (e.target === registerModal) { closeModal(registerModal); setTimeout(()=>location.reload(), 100); } });
+
+            if (switchToRegisterLink) {
+                switchToRegisterLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    clearErrors('authForm'); clearErrors('registerForm');
+                    closeModal(loginModal); 
+                    openModal(registerModal);
+                });
+            }
+        
+            // --- ОБРАБОТКА ВХОДА ---
+            const loginForm = document.getElementById('authForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    clearErrors('authForm');
+                    
+                    const phoneInput = document.getElementById('loginPhone');
+                    const passwordInput = document.getElementById('loginPassword');
+                    const formattedPhone = formatPhone(phoneInput.value);
+                    let hasError = false;
+                    
+                    if (!isValidPhone(phoneInput.value)) {
+                        showError('loginPhone', 'loginPhoneError', 'Номер должен быть в формате +79004301679');
+                        hasError = true;
+                    }
+                    if (!passwordInput.value) {
+                        showError('loginPassword', 'loginPasswordError', 'Введите пароль');
+                        hasError = true;
+                    }
+                    if (hasError) return;
+
+                    if (checkCredentials(formattedPhone, passwordInput.value)) {
+                        setLoggedIn(true);
+                        closeModal(loginModal);
+                        showSuccessNotification('С возвращением!', 'Вы успешно вошли в систему.', () => {
+                            location.reload();
+                        });
+                    } else {
+                        showError('loginPassword', 'loginPasswordError', 'Неверный номер или пароль');
+                    }
+                });
+            }
+        
+            // --- ОБРАБОТКА РЕГИСТРАЦИИ ---
+            const registerForm = document.getElementById('registerForm');
+            if (registerForm) {
+                registerForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    clearErrors('registerForm');
+                    
+                    const phoneInput = document.getElementById('regPhone');
+                    const passwordInput = document.getElementById('regPassword');
+                    const formattedPhone = formatPhone(phoneInput.value);
+                    let hasError = false;
+
+                    if (!isValidPhone(phoneInput.value)) {
+                        showError('regPhone', 'regPhoneError', 'Номер должен быть в формате +79004301679');
+                        hasError = true;
+                    }
+                    if (!isValidPassword(passwordInput.value)) {
+                        showError('regPassword', 'regPasswordError', 'Пароль должен содержать минимум 6 символов');
+                        hasError = true;
+                    }
+                    if (!document.getElementById('regConsent')?.checked) {
+                        showError('regConsent', 'regConsentError', 'Нужно согласие на обработку персональных данных');
+                        hasError = true;
+                    }
+                    if (hasError) return;
+
+                    if (saveUser(formattedPhone, passwordInput.value)) {
+                        closeModal(registerModal);
+                        showSuccessNotification('Регистрация успешна!', 'Добро пожаловать в нашу семью.', () => {
+                            setLoggedIn(true);
+                            location.reload();
+                        });
+                    } else {
+                        showError('regPhone', 'regPhoneError', 'Пользователь с таким номером уже существует');
+                    }
+                });
+            }
+        
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    if (loginModal && loginModal.style.display === 'flex') { closeModal(loginModal); setTimeout(()=>location.reload(), 100); }
+                    if (registerModal && registerModal.style.display === 'flex') { closeModal(registerModal); setTimeout(()=>location.reload(), 100); }
+                    
+                    if (navContainer && navContainer.classList.contains('active')) {
+                        navContainer.classList.remove('active');
+                        setTimeout(() => { navContainer.style.display = 'none'; }, 300);
+                        document.body.style.overflow = 'auto';
+                        if (mobileMenuBtn) mobileMenuBtn.innerHTML = '☰';
+                    }
+                }
+            });
+        
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    if (targetId) {
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    updateActiveLink();
+                });
+            });
+        });
+    </script>
+
+    <div class="cookie" data-cookie hidden role="dialog" aria-label="Уведомление о cookie">
+        <p>Используем <code>localStorage</code> для демо-входа и избранного. Подробнее — в <a href="privacy.html">политике</a>.</p>
+        <button type="button" data-cookie-ok>Понятно</button>
+    </div>
+    <script src="cookie.js" defer></script>
+
+</body>
+</html>
