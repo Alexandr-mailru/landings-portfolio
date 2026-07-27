@@ -1,15 +1,27 @@
 ﻿# Портфолио
 
-Учебные лендинги на чистом HTML/CSS/JS. Публикация через GitHub Pages из папки `docs/`.
+Хаб учебных проектов: Django-приложения и лендинги на HTML/CSS/JS. Публикация через GitHub Pages из папки `docs/`.
 
-## Сайты
+**Сайт:** [alexandr-mailru.github.io/landings-portfolio](https://alexandr-mailru.github.io/landings-portfolio/)
 
-- [Хаб](https://alexandr-mailru.github.io/landings-portfolio/)
-- [MORÉ — студия красоты](https://alexandr-mailru.github.io/landings-portfolio/01-more-studio/)
-- [ДОМЛИНИЯ — ремонт квартир](https://alexandr-mailru.github.io/landings-portfolio/02-domlinia/)
-- [Каюта — ресторан](https://alexandr-mailru.github.io/landings-portfolio/03-kayuta/)
-- [Мастерская домашней еды](https://alexandr-mailru.github.io/landings-portfolio/04-domashnyaya-eda/)
+## Django
 
-## Приложения (Django)
+| Проект | Описание |
+|--------|----------|
+| [Контур CRM](https://github.com/Alexandr-mailru/kontur-crm) | CRM на Django — клиенты · сделки · воронка · ФЗ‑152 · GitHub |
+| [Северный магазин](https://github.com/Alexandr-mailru/severny-shop) | Магазин на Django — каталог · корзина · заказы · ФЗ‑152 · GitHub |
+| [Остатки → Ужин](https://github.com/Alexandr-mailru/ostratki-uzhin) | Сервис на Django — рецепты · API · PDF · ФЗ‑152 · GitHub |
+| [Клуб собак](https://github.com/Alexandr-mailru/dogs-club) | Платформа на Django — собаки · отзывы · модерация · ФЗ‑152 · GitHub |
 
-- [Контур CRM](https://github.com/Alexandr-mailru/kontur-crm) — демо-CRM: клиенты, сделки, задачи, согласие ПДн (ФЗ‑152), пользовательское соглашение
+## Лендинги (демо)
+
+| Проект | Описание |
+|--------|----------|
+| [MORÉ](https://alexandr-mailru.github.io/landings-portfolio/01-more-studio/) | Лендинг HTML/CSS — студия красоты · тёмный люкс · адаптив · демо |
+| [ДОМ/ЛИНИЯ](https://alexandr-mailru.github.io/landings-portfolio/02-domlinia/) | Лендинг HTML/CSS — ремонт квартир · брутализм · адаптив · демо |
+| [Каюта](https://alexandr-mailru.github.io/landings-portfolio/03-kayuta/) | Лендинг HTML/CSS — ресторан · мягкий свет · адаптив · демо |
+| [Домашняя еда](https://alexandr-mailru.github.io/landings-portfolio/04-domashnyaya-eda/) | Лендинг HTML/CSS — кулинария · мультистраничный · ФЗ‑152 · демо |
+
+## Автор
+
+GitHub: **Alexandr-mailru**

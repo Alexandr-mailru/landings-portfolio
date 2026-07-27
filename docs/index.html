@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Портфолио</title>
+  <title>Портфолио — Александр</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
@@ -34,7 +34,14 @@
       font-size: clamp(1.8rem, 7vw, 3.3rem);
       letter-spacing: -0.04em;
       line-height: 1.05;
+      margin-bottom: 0.5rem;
+    }
+    .lead {
+      color: var(--muted);
+      font-size: 1rem;
       margin-bottom: clamp(28px, 6vw, 40px);
+      max-width: 36rem;
+      line-height: 1.5;
     }
     .grid { display: grid; gap: 18px; }
     @media (min-width: 560px) and (max-width: 899px) { .grid { grid-template-columns: repeat(2, 1fr); } }
@@ -58,75 +65,93 @@
       padding: 16px;
       font-family: Syne, sans-serif;
       font-weight: 700;
-      font-size: 1.3rem;
+      font-size: clamp(1.05rem, 3.5vw, 1.3rem);
       letter-spacing: -0.03em;
+      line-height: 1.15;
     }
     .p1 { background: linear-gradient(145deg, #07140f, #1a4d3a 50%, #c6a35a 150%); color: #f2ebe0; }
     .p2 { background: linear-gradient(160deg, #f3f1ea, #ebe7dc 40%, #ff4d1a 130%); color: #101114; }
     .p3 { background: linear-gradient(150deg, #f7fbfc, #d7e8e4 45%, #3f7f78 140%); color: #13202b; }
     .p4 { background: linear-gradient(150deg, #fff8ef, #f0e2cc 40%, #c45c26 140%); color: #2c2418; }
     .p5 { background: linear-gradient(150deg, #eef2f7, #dbeafe 42%, #1d4ed8 145%); color: #0f172a; }
-    .section { margin-top: clamp(36px, 8vw, 52px); }
-    .section h2 {
-      font-family: Syne, sans-serif;
-      font-weight: 700;
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
+    .p6 { background: linear-gradient(150deg, #e8f4fc, #b8d4e8 42%, #1e3a5f 145%); color: #0c1929; }
+    .p7 { background: linear-gradient(150deg, #1a1410, #3d2914 45%, #e8a838 140%); color: #fff8ef; }
+    .p8 { background: linear-gradient(150deg, #f5efe6, #d4c4a8 42%, #6b4e2e 145%); color: #2a1f14; }
     .meta { padding: 16px; border-top: 1px solid var(--line); }
-    .meta strong { display: block; font-family: Syne, sans-serif; }
-    .meta span { display: block; margin-top: 6px; color: var(--muted); font-size: 0.9rem; }
+    .meta strong { display: block; font-family: Syne, sans-serif; font-size: 0.98rem; }
+    .meta span { display: block; margin-top: 6px; color: var(--muted); font-size: 0.86rem; line-height: 1.45; }
   </style>
 </head>
 <body>
   <div class="wrap">
     <h1>Портфолио</h1>
+    <p class="lead">Учебные проекты: Django-приложения и лендинги на HTML/CSS/JS. Исходники — на GitHub, лендинги — живые демо на этой странице.</p>
+
     <div class="grid">
+      <a class="card" href="https://github.com/Alexandr-mailru/kontur-crm" target="_blank" rel="noopener noreferrer">
+        <div class="preview p5">Контур CRM</div>
+        <div class="meta">
+          <strong>CRM на Django</strong>
+          <span>клиенты · сделки · воронка · ФЗ‑152 · GitHub</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://github.com/Alexandr-mailru/severny-shop" target="_blank" rel="noopener noreferrer">
+        <div class="preview p6">Северный магазин</div>
+        <div class="meta">
+          <strong>Магазин на Django</strong>
+          <span>каталог · корзина · заказы · ФЗ‑152 · GitHub</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://github.com/Alexandr-mailru/ostratki-uzhin" target="_blank" rel="noopener noreferrer">
+        <div class="preview p7">Остатки → Ужин</div>
+        <div class="meta">
+          <strong>Сервис на Django</strong>
+          <span>рецепты · API · PDF · ФЗ‑152 · GitHub</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://github.com/Alexandr-mailru/dogs-club" target="_blank" rel="noopener noreferrer">
+        <div class="preview p8">Клуб собак</div>
+        <div class="meta">
+          <strong>Платформа на Django</strong>
+          <span>собаки · отзывы · модерация · ФЗ‑152 · GitHub</span>
+        </div>
+      </a>
+
       <a class="card" href="01-more-studio/">
         <div class="preview p1">MORÉ</div>
         <div class="meta">
-          <strong>Студия красоты</strong>
-          <span>тёмный люкс</span>
+          <strong>Лендинг HTML/CSS</strong>
+          <span>студия красоты · тёмный люкс · адаптив · демо</span>
         </div>
       </a>
+
       <a class="card" href="02-domlinia/">
         <div class="preview p2">ДОМ/ЛИНИЯ</div>
         <div class="meta">
-          <strong>Ремонт квартир</strong>
-          <span>светлый брутал</span>
+          <strong>Лендинг HTML/CSS</strong>
+          <span>ремонт квартир · брутализм · адаптив · демо</span>
         </div>
       </a>
+
       <a class="card" href="03-kayuta/">
         <div class="preview p3">Каюта</div>
         <div class="meta">
-          <strong>Ресторан</strong>
-          <span>мягкий свет</span>
+          <strong>Лендинг HTML/CSS</strong>
+          <span>ресторан · мягкий свет · адаптив · демо</span>
         </div>
       </a>
+
       <a class="card" href="04-domashnyaya-eda/">
         <div class="preview p4">Домашняя еда</div>
         <div class="meta">
-          <strong>Кулинарная мастерская</strong>
-          <span>мультистраничный лендинг</span>
+          <strong>Лендинг HTML/CSS</strong>
+          <span>кулинария · мультистраничный · ФЗ‑152 · демо</span>
         </div>
       </a>
     </div>
-
-    <section class="section">
-      <h2>Приложения</h2>
-      <div class="grid">
-        <a class="card" href="https://github.com/Alexandr-mailru/kontur-crm" target="_blank" rel="noopener noreferrer">
-          <div class="preview p5">Контур CRM</div>
-          <div class="meta">
-            <strong>CRM на Django</strong>
-            <span>клиенты · сделки · воронка · ФЗ‑152 · GitHub</span>
-          </div>
-        </a>
-      </div>
-    </section>
   </div>
 </body>
 </html>
