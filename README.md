@@ -9,7 +9,3 @@
 - [ДОМЛИНИЯ — ремонт квартир](https://alexandr-mailru.github.io/landings-portfolio/02-domlinia/)
 - [Каюта — ресторан](https://alexandr-mailru.github.io/landings-portfolio/03-kayuta/)
 - [Мастерская домашней еды](https://alexandr-mailru.github.io/landings-portfolio/04-domashnyaya-eda/)
-
-## Full-stack (Django)
-
-- [Остатки → Ужин — live demo](https://ostratki-uzhin.onrender.com) · [GitHub](https://github.com/Alexandr-mailru/ostratki-uzhin)
