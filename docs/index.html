@@ -65,6 +65,17 @@
     .p2 { background: linear-gradient(160deg, #f3f1ea, #ebe7dc 40%, #ff4d1a 130%); color: #101114; }
     .p3 { background: linear-gradient(150deg, #f7fbfc, #d7e8e4 45%, #3f7f78 140%); color: #13202b; }
     .p4 { background: linear-gradient(150deg, #fff8ef, #f0e2cc 40%, #c45c26 140%); color: #2c2418; }
+    .p5 { background: linear-gradient(150deg, #eef2f7, #dbeafe 42%, #1d4ed8 145%); color: #0f172a; }
+    .section { margin-top: clamp(36px, 8vw, 52px); }
+    .section h2 {
+      font-family: Syne, sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
     .meta { padding: 16px; border-top: 1px solid var(--line); }
     .meta strong { display: block; font-family: Syne, sans-serif; }
     .meta span { display: block; margin-top: 6px; color: var(--muted); font-size: 0.9rem; }
@@ -103,6 +114,19 @@
         </div>
       </a>
     </div>
+
+    <section class="section">
+      <h2>Приложения</h2>
+      <div class="grid">
+        <a class="card" href="https://github.com/Alexandr-mailru/kontur-crm" target="_blank" rel="noopener noreferrer">
+          <div class="preview p5">Контур CRM</div>
+          <div class="meta">
+            <strong>CRM на Django</strong>
+            <span>клиенты · сделки · воронка · ФЗ‑152 · GitHub</span>
+          </div>
+        </a>
+      </div>
+    </section>
   </div>
 </body>
 </html>

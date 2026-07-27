@@ -9,3 +9,7 @@
 - [ДОМЛИНИЯ — ремонт квартир](https://alexandr-mailru.github.io/landings-portfolio/02-domlinia/)
 - [Каюта — ресторан](https://alexandr-mailru.github.io/landings-portfolio/03-kayuta/)
 - [Мастерская домашней еды](https://alexandr-mailru.github.io/landings-portfolio/04-domashnyaya-eda/)
+
+## Приложения (Django)
+
+- [Контур CRM](https://github.com/Alexandr-mailru/kontur-crm) — демо-CRM: клиенты, сделки, задачи, согласие ПДн (ФЗ‑152), пользовательское соглашение
