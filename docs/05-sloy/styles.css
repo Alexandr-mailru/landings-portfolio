@@ -40,6 +40,9 @@ body {
 body:has(.cookie.is-open) {
   padding-bottom: max(140px, env(safe-area-inset-bottom, 0px) + 120px);
 }
+body:has(.cookie.is-open) .hero {
+  padding-bottom: max(168px, env(safe-area-inset-bottom, 0px) + 148px);
+}
 
 img, svg { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
@@ -61,11 +64,14 @@ button, input, select, textarea { font: inherit; color: inherit; }
   color: #e8ebe4;
   border: 1px solid #2a3530;
   font-size: 0.86rem;
+  pointer-events: auto;
 }
 .cookie.is-open { display: flex; }
 .cookie p { margin: 0; flex: 1 1 160px; min-width: 0; line-height: 1.4; overflow-wrap: anywhere; }
 .cookie a { color: #c6db7a; }
 .cookie button {
+  position: relative;
+  z-index: 1;
   appearance: none;
   border: 0;
   background: var(--accent);
@@ -73,6 +79,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   padding: 0.55rem 0.9rem;
   cursor: pointer;
   font-weight: 600;
+  pointer-events: auto;
 }
 
 .header {
