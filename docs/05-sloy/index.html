@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>СЛОЙ — студия интерьера</title>
+  <meta name="description" content="СЛОЙ: интерьеры из материалов и света. Immersive-лендинг для портфолио." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Karla:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cookie is-open" data-cookie role="dialog" aria-label="Уведомление о файлах cookie">
+    <p>Используем технические файлы cookie для работы сайта. Подробнее в <a href="privacy.html">политике конфиденциальности</a>.</p>
+    <button type="button" data-cookie-ok>Понятно</button>
+  </div>
+
+  <header class="header" data-header>
+    <a class="logo" href="#top">СЛОЙ</a>
+    <nav class="nav" data-nav>
+      <a href="#method">Метод</a>
+      <a href="#works">Работы</a>
+      <a href="#atelier">Ателье</a>
+      <a class="nav-cta" href="#brief">Бриф</a>
+    </nav>
+    <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" data-menu>
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero" data-hero>
+      <div class="hero-plane" aria-hidden="true" data-parallax>
+        <div class="stratum s1" data-layer="0.12"></div>
+        <div class="stratum s2" data-layer="0.22"></div>
+        <div class="stratum s3" data-layer="0.34"></div>
+        <div class="stratum s4" data-layer="0.48"></div>
+        <div class="stratum-glow" data-layer="0.18"></div>
+      </div>
+      <div class="hero-copy">
+        <h1>
+          <span class="brand-mark">СЛОЙ</span>
+          <span class="hero-line">Интерьер, собранный<br />по слоям материала</span>
+        </h1>
+        <p class="lead">Студия пространства: свет, фактура и тишина между плоскостями.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#brief">Обсудить проект</a>
+          <a class="link-quiet" href="#works">Смотреть работы</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="method" id="method">
+      <div class="sec-head reveal">
+        <p class="eyebrow">01 — Метод</p>
+        <h2>Один слой за раз</h2>
+        <p class="sec-lead">Не декор поверх коробки — а последовательность решений, где каждое держит следующее.</p>
+      </div>
+      <ol class="stack" data-stack>
+        <li class="stack-item reveal" data-stack-item>
+          <span class="stack-num">01</span>
+          <div>
+            <h3>Каркас</h3>
+            <p>Оси движения, высота, свет из окон. Чертёж без «красивых картинок».</p>
+          </div>
+        </li>
+        <li class="stack-item reveal" data-stack-item>
+          <span class="stack-num">02</span>
+          <div>
+            <h3>Масса</h3>
+            <p>Стены, пол, потолок как три плоскости. Выбираем тон и тактильность до мебели.</p>
+          </div>
+        </li>
+        <li class="stack-item reveal" data-stack-item>
+          <span class="stack-num">03</span>
+          <div>
+            <h3>Свет</h3>
+            <p>Сценарии дня и вечера. Никаких «люстр ради люстр» — только рабочие уровни.</p>
+          </div>
+        </li>
+        <li class="stack-item reveal" data-stack-item>
+          <span class="stack-num">04</span>
+          <div>
+            <h3>Предметы</h3>
+            <p>Мебель и детали, которые не спорят с плоскостями. Меньше SKU — больше воздуха.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="works" id="works">
+      <div class="sec-head reveal">
+        <p class="eyebrow">02 — Работы</p>
+        <h2>Три плоскости</h2>
+        <p class="sec-lead">Учебные кейсы: квартира, шоурум, кабинет. Без каталога «до/после».</p>
+      </div>
+      <div class="work-rail" data-rail>
+        <article class="work reveal">
+          <div class="work-visual w1" aria-hidden="true"></div>
+          <h3>Квартира на Васильевском</h3>
+          <p>Бетон, ясень, низкий свет. 68 м² · 2025</p>
+        </article>
+        <article class="work reveal">
+          <div class="work-visual w2" aria-hidden="true"></div>
+          <h3>Шоурум тканей</h3>
+          <p>Вертикальные панели, холодный день. 120 м² · 2025</p>
+        </article>
+        <article class="work reveal">
+          <div class="work-visual w3" aria-hidden="true"></div>
+          <h3>Кабинет редактора</h3>
+          <p>Тёмный пол, бумажные стены, один стол. 24 м² · 2026</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="atelier" id="atelier">
+      <div class="atelier-sticky reveal">
+        <p class="eyebrow">03 — Ателье</p>
+        <h2>Работаем в слоях,<br />а не в слайдах</h2>
+        <p class="sec-lead">Москва · выезд по ЦФО. Проект от планировки до авторского надзора.</p>
+      </div>
+      <ul class="atelier-list">
+        <li class="reveal"><strong>Планировка</strong><span>перепланировка, зонирование, инженерные привязки</span></li>
+        <li class="reveal"><strong>Материалы</strong><span>образцы вживую, смета до закупки</span></li>
+        <li class="reveal"><strong>Надзор</strong><span>выезды на объект, сверка с чертежом</span></li>
+      </ul>
+    </section>
+
+    <section class="brief" id="brief">
+      <div class="sec-head reveal">
+        <p class="eyebrow">04 — Бриф</p>
+        <h2>Расскажите о пространстве</h2>
+        <p class="sec-lead">Ответим в течение рабочего дня. Учебная форма — данные никуда не уходят.</p>
+      </div>
+      <form class="form reveal" data-form novalidate>
+        <label>
+          <span>Имя</span>
+          <input name="name" type="text" autocomplete="name" required placeholder="Как к вам обращаться" />
+        </label>
+        <label>
+          <span>Телефон</span>
+          <input name="phone" type="tel" autocomplete="tel" required placeholder="+7" />
+        </label>
+        <label>
+          <span>Тип пространства</span>
+          <select name="space" required>
+            <option value="" disabled selected>Выберите</option>
+            <option>Квартира</option>
+            <option>Дом</option>
+            <option>Шоурум / офис</option>
+            <option>Другое</option>
+          </select>
+        </label>
+        <label class="full">
+          <span>Коротко о задаче</span>
+          <textarea name="note" rows="3" placeholder="Метраж, срок, что важно сохранить"></textarea>
+        </label>
+        <label class="check full">
+          <input name="pdn" type="checkbox" value="1" required />
+          <span>Согласен(на) на обработку персональных данных согласно <a href="privacy.html">политике</a></span>
+        </label>
+        <div class="form-row full">
+          <button class="btn" type="submit">Отправить бриф</button>
+          <p class="form-status" data-status hidden></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="logo" href="#top">СЛОЙ</a>
+    <p>Учебный immersive-лендинг · портфолио</p>
+    <a href="privacy.html">Конфиденциальность</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
