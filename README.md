@@ -21,6 +21,7 @@
 | [ДОМ/ЛИНИЯ](https://alexandr-mailru.github.io/landings-portfolio/02-domlinia/) | Лендинг HTML/CSS — ремонт квартир · брутализм · адаптив · демо |
 | [Каюта](https://alexandr-mailru.github.io/landings-portfolio/03-kayuta/) | Лендинг HTML/CSS — ресторан · мягкий свет · адаптив · демо |
 | [Домашняя еда](https://alexandr-mailru.github.io/landings-portfolio/04-domashnyaya-eda/) | Лендинг HTML/CSS — кулинария · мультистраничный · ФЗ‑152 · демо |
+| [СЛОЙ](https://alexandr-mailru.github.io/landings-portfolio/05-sloy/) | Лендинг HTML/CSS — интерьер · immersive · адаптив · демо |
 
 ## Автор
 
