@@ -1,13 +1,14 @@
 ﻿# Портфолио
 
-Хаб учебных проектов: Django-приложения и лендинги на HTML/CSS/JS. Публикация через GitHub Pages из папки `docs/`.
+Хаб учебных проектов: Django и Next.js приложения, лендинги на HTML/CSS/JS. Публикация через GitHub Pages из папки `docs/`.
 
 **Сайт:** [alexandr-mailru.github.io/landings-portfolio](https://alexandr-mailru.github.io/landings-portfolio/)
 
-## Django
+## Приложения
 
 | Проект | Описание |
 |--------|----------|
+| [СнабОфис](https://github.com/Alexandr-mailru/snab-office) | Магазин на Next.js — каталог · корзина · заказы · 1С CommerceML · ФЗ‑152 · GitHub |
 | [Контур CRM](https://github.com/Alexandr-mailru/kontur-crm) | CRM на Django — клиенты · сделки · воронка · ФЗ‑152 · GitHub |
 | [Северный магазин](https://github.com/Alexandr-mailru/severny-shop) | Магазин на Django — каталог · корзина · заказы · ФЗ‑152 · GitHub |
 | [Остатки → Ужин](https://github.com/Alexandr-mailru/ostratki-uzhin) | Сервис на Django — рецепты · API · PDF · ФЗ‑152 · GitHub |
