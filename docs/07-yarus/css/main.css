@@ -119,7 +119,16 @@ code {
   z-index: 1;
 }
 
-.scrub__canvas { display: none; }
+.scrub__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #0c0f0d;
+}
+
+.seq-frame { display: none; }
 .hero__shade {
   position: absolute;
   inset: 0;

@@ -1,0 +1,4 @@
+# Source videos and tooling — not published to GitHub Pages
+_src/
+node_modules/
+*.tgz

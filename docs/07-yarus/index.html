@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ЯРУС — фотореалистичная сборка по скроллу</title>
-  <meta name="description" content="ЯРУС: фотореалистичные кадры этапов — торт собирается и дом строится при прокрутке." />
+  <title>ЯРУС — реальные кадры сборки по скроллу</title>
+  <meta name="description" content="ЯРУС: реальные кадры с одной камеры — готовка торта и стройка дома. Плавный скролл без наслоения." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
@@ -24,46 +24,40 @@
 
   <main id="main">
     <section class="hero" id="hero">
-      <img class="hero__photo" src="frames/house/06.jpg" alt="" width="1600" height="1200" fetchpriority="high" />
+      <img class="hero__photo" src="frames/house/24.jpg" alt="" width="1280" height="720" fetchpriority="high" />
       <div class="hero__shade" aria-hidden="true"></div>
       <div class="hero__copy">
         <p class="brand-mark">ЯРУС</p>
-        <h1>Фотореализм. Этап за этапом. Скролл собирает сцену.</h1>
-        <p class="hero__lead">Каждый кадр — сгенерированный этап приготовления торта и строительства дома. Листайте, чтобы собрать.</p>
-        <a class="cta" href="#cake">Собрать торт</a>
+        <h1>Реальные кадры. Одна камера. Скролл листает этапы.</h1>
+        <p class="hero__lead">Кадры вырезаны из свободных таймлапсов: торт покрывают кремом, дом собирают на участке. Без наслоения чужих ракурсов.</p>
+        <a class="cta" href="#cake">Смотреть готовку</a>
       </div>
-      <p class="scroll-hint" data-scroll-hint>Скролл = этап</p>
+      <p class="scroll-hint" data-scroll-hint>Один кадр за раз</p>
     </section>
 
     <section class="intro">
-      <p class="intro__label">Формат</p>
-      <h2>Шесть фотореалистичных этапов на главу. Плавный переход между ними.</h2>
-      <p>Не сток-видео и не схематичный Canvas — отдельные кадры сборки, скролл смешивает соседние этапы.</p>
+      <p class="intro__label">Источник</p>
+      <h2>Не генерация и не коллаж. Последовательные кадры одной съёмки.</h2>
+      <p>Торт — free stock Mixkit (фиксированный ракурс на поворотном столе). Дом — таймлапс сборки каркасного дома, Wikimedia Commons (CC). Скролл показывает <strong>только один кадр</strong>.</p>
     </section>
 
-    <section class="scrub" id="cake" aria-label="Сборка торта">
+    <section class="scrub" id="cake" aria-label="Готовка торта">
       <div class="scrub__pin">
-        <div class="scrub__stage" data-sequence="cake">
-          <img class="seq-frame is-active" data-i="0" src="frames/cake/01.jpg" alt="" width="1200" height="900" />
-          <img class="seq-frame" data-i="1" src="frames/cake/02.jpg" alt="" width="1200" height="900" loading="lazy" />
-          <img class="seq-frame" data-i="2" src="frames/cake/03.jpg" alt="" width="1200" height="900" loading="lazy" />
-          <img class="seq-frame" data-i="3" src="frames/cake/04.jpg" alt="" width="1200" height="900" loading="lazy" />
-          <img class="seq-frame" data-i="4" src="frames/cake/05.jpg" alt="" width="1200" height="900" loading="lazy" />
-          <img class="seq-frame" data-i="5" src="frames/cake/06.jpg" alt="" width="1200" height="900" loading="lazy" />
+        <div class="scrub__stage">
+          <canvas class="scrub__canvas" data-reel="cake" width="1280" height="720" role="img" aria-label="Кадры готовки торта"></canvas>
           <div class="scrub__progress"><i data-cake-bar></i></div>
         </div>
         <aside class="scrub__panel">
-          <p class="eyebrow">Глава 01 · Торт</p>
-          <p class="counter"><span data-cake-num>01</span><span class="counter__sep">/</span>06</p>
-          <h2 data-cake-title>Пустая тарелка</h2>
-          <p class="scrub__text" data-cake-text>Стол и подставка. С этого кадра начинается фотореалистичная сборка.</p>
+          <p class="eyebrow">Глава 01 · Готовка</p>
+          <p class="counter"><span data-cake-num>01</span><span class="counter__sep">/</span><span data-cake-total>24</span></p>
+          <h2 data-cake-title>Старт съёмки</h2>
+          <p class="scrub__text" data-cake-text>Тот же стол и ракурс. Листайте — крем ложится кадр за кадром.</p>
           <ul class="ticks" data-cake-ticks>
-            <li class="is-on">Тарелка</li>
-            <li>Корж</li>
+            <li class="is-on">Старт</li>
             <li>Крем</li>
-            <li>2-й ярус</li>
-            <li>3-й ярус</li>
-            <li>Готово</li>
+            <li>Выравнивание</li>
+            <li>Декор</li>
+            <li>Финиш</li>
           </ul>
         </aside>
       </div>
@@ -72,34 +66,28 @@
     <section class="bridge">
       <div class="bridge__inner">
         <p class="eyebrow eyebrow--light">Дальше</p>
-        <h2>Тот же принцип — дом растёт по кадрам стройки.</h2>
-        <p>Участок → фундамент → каркас → стены → крыша → сдача.</p>
+        <h2>Стройка с одной точки — дом вырастает в кадре.</h2>
+        <p>Таймлапс prefab-дома: от площадки до готового каркаса, без склейки разных локаций.</p>
       </div>
     </section>
 
     <section class="scrub scrub--house" id="house" aria-label="Строительство дома">
       <div class="scrub__pin">
-        <div class="scrub__stage" data-sequence="house">
-          <img class="seq-frame is-active" data-i="0" src="frames/house/01.jpg" alt="" width="1200" height="900" loading="lazy" />
-          <img class="seq-frame" data-i="1" src="frames/house/02.jpg" alt="" width="1200" height="900" loading="lazy" />
-          <img class="seq-frame" data-i="2" src="frames/house/03.jpg" alt="" width="1200" height="900" loading="lazy" />
-          <img class="seq-frame" data-i="3" src="frames/house/04.jpg" alt="" width="1200" height="900" loading="lazy" />
-          <img class="seq-frame" data-i="4" src="frames/house/05.jpg" alt="" width="1200" height="900" loading="lazy" />
-          <img class="seq-frame" data-i="5" src="frames/house/06.jpg" alt="" width="1200" height="900" loading="lazy" />
+        <div class="scrub__stage">
+          <canvas class="scrub__canvas" data-reel="house" width="1280" height="720" role="img" aria-label="Кадры стройки дома"></canvas>
           <div class="scrub__progress"><i data-house-bar></i></div>
         </div>
         <aside class="scrub__panel scrub__panel--dark">
-          <p class="eyebrow">Глава 02 · Дом</p>
-          <p class="counter"><span data-house-num>01</span><span class="counter__sep">/</span>06</p>
-          <h2 data-house-title>Пустой участок</h2>
-          <p class="scrub__text" data-house-text>Площадка до старта. Дальше — фундамент и рост коробки.</p>
+          <p class="eyebrow">Глава 02 · Стройка</p>
+          <p class="counter"><span data-house-num>01</span><span class="counter__sep">/</span><span data-house-total>24</span></p>
+          <h2 data-house-title>Площадка</h2>
+          <p class="scrub__text" data-house-text>Реальный таймлапс сборки. Скролл перематывает только этот ролик.</p>
           <ul class="ticks" data-house-ticks>
-            <li class="is-on">Участок</li>
-            <li>Фундамент</li>
+            <li class="is-on">Площадка</li>
+            <li>Основание</li>
             <li>Каркас</li>
             <li>Стены</li>
-            <li>Крыша</li>
-            <li>Сдача</li>
+            <li>Готово</li>
           </ul>
         </aside>
       </div>
@@ -109,18 +97,18 @@
       <div class="offer__grid">
         <div>
           <p class="eyebrow">Для компаний</p>
-          <h2>Ваши этапы — в таком же фото-скролле</h2>
-          <p class="offer__lead">Подставляем кадры вашего продукта или стройки. Клиент собирает процесс скроллом.</p>
+          <h2>Ваш таймлапс — в том же скролле</h2>
+          <p class="offer__lead">Снимаете процесс с одной камеры — мы режем на кадры и вешаем на скролл. Без чужих ракурсов и без наслоения.</p>
         </div>
         <ul class="offer__list">
-          <li><strong>Food</strong><span>этапы приготовления до подачи</span></li>
-          <li><strong>Development</strong><span>корпус от котлована до ключей</span></li>
-          <li><strong>Product</strong><span>сборка изделия по стадиям</span></li>
+          <li><strong>Food</strong><span>готовка / декор с фиксированной точки</span></li>
+          <li><strong>Development</strong><span>таймлапс корпуса с одной вышки</span></li>
+          <li><strong>Production</strong><span>сборка изделия на линии</span></li>
         </ul>
       </div>
       <div class="offer__cta-row">
         <a class="cta cta--dark" href="mailto:hello@yarus.demo">Обсудить проект</a>
-        <p class="offer__note">Учебное демо. Кадры сгенерированы для портфолио, не коммерческая съёмка.</p>
+        <p class="offer__note">Учебное демо. Кадры: Mixkit (Stock Video Free License) и Wikimedia Commons (CC BY-SA). Не оферта.</p>
       </div>
     </section>
   </main>
@@ -128,7 +116,7 @@
   <footer class="foot">
     <div>
       <strong>ЯРУС</strong>
-      <span>фото-этапы · scroll crossfade · учебное демо</span>
+      <span>реальные кадры · один кадр · учебное демо</span>
     </div>
     <a href="privacy.html">Политика ПДн</a>
   </footer>

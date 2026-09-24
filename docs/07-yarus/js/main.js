@@ -1,91 +1,153 @@
 (() => {
+  const CAKE_COUNT = 24;
+  const HOUSE_COUNT = 24;
+
   const cakeCopy = [
-    { title: "Пустая тарелка", text: "Стол и подставка. С этого кадра начинается фотореалистичная сборка." },
-    { title: "Первый корж", text: "Бисквитная основа на месте — несущий ярус торта." },
-    { title: "Крем", text: "Прослойка выравнивает поверхность и готовит следующий ярус." },
-    { title: "Второй ярус", text: "Средний корж садится на крем — силуэт растёт вверх." },
-    { title: "Третий ярус", text: "Верхний этаж собран. Дальше — финальный декор." },
-    { title: "Готовый торт", text: "Крем, ягоды и свеча. Сборка завершена." },
+    { at: 0, title: "Старт съёмки", text: "Тот же стол и ракурс. Листайте — крем ложится кадр за кадром." },
+    { at: 0.2, title: "Нанесение крема", text: "Кондитер ведёт массу по корпусу. Камера не меняется." },
+    { at: 0.45, title: "Выравнивание", text: "Поверхность становится ровной — этап за этапом в одном кадре." },
+    { at: 0.7, title: "Финальный декор", text: "Детали проявляются ближе к концу таймлапса." },
+    { at: 0.9, title: "Готово", text: "Последний кадр серии. Сборка без наслоения других фото." },
   ];
 
   const houseCopy = [
-    { title: "Пустой участок", text: "Площадка до старта. Дальше — фундамент и рост коробки." },
-    { title: "Фундамент", text: "Бетонное основание. Без него стены не держатся." },
-    { title: "Каркас", text: "Деревянный скелет дома поднимается над фундаментом." },
-    { title: "Стены", text: "Коробка закрыта, проёмы под окна уже читаются." },
-    { title: "Крыша", text: "Кровля и остекление — дом почти готов." },
-    { title: "Сдача", text: "Финальный кадр: жилой дом на том же участке." },
+    { at: 0, title: "Площадка", text: "Реальный таймлапс сборки. Скролл перематывает только этот ролик." },
+    { at: 0.2, title: "Основание", text: "Появляется нижний контур дома — всё с одной точки съёмки." },
+    { at: 0.4, title: "Каркас растёт", text: "Стойки и перекрытия прибывают в кадре." },
+    { at: 0.65, title: "Коробка", text: "Стены закрываются. Ракурс прежний." },
+    { at: 0.88, title: "Собран", text: "Финальные кадры prefab-дома." },
   ];
 
   function pad(n) {
-    return String(n + 1).padStart(2, "0");
+    return String(n).padStart(2, "0");
   }
 
-  function setTicks(root, index) {
-    if (!root) return;
-    [...root.children].forEach((li, i) => li.classList.toggle("is-on", i <= index));
+  function pick(list, p) {
+    let cur = list[0];
+    for (const item of list) if (p >= item.at) cur = item;
+    return cur;
   }
 
-  function bindSequence(sectionId, copy, map) {
-    const section = document.getElementById(sectionId);
-    const stage = section && section.querySelector("[data-sequence]");
-    if (!section || !stage) return;
+  function setTicks(el, p) {
+    if (!el) return;
+    const items = [...el.children];
+    const idx = Math.min(items.length - 1, Math.floor(p * items.length));
+    items.forEach((li, i) => li.classList.toggle("is-on", i <= idx));
+  }
 
-    const frames = [...stage.querySelectorAll(".seq-frame")];
-    const n = frames.length;
-    if (!n) return;
+  function loadReel(folder, count) {
+    const images = [];
+    const jobs = [];
+    for (let i = 1; i <= count; i++) {
+      const img = new Image();
+      img.decoding = "async";
+      img.src = `frames/${folder}/${pad(i)}.jpg`;
+      images.push(img);
+      jobs.push(
+        img.decode
+          ? img.decode().catch(() => {})
+          : new Promise((res) => {
+              img.onload = res;
+              img.onerror = res;
+            })
+      );
+    }
+    return Promise.all(jobs).then(() => images);
+  }
 
-    const apply = (progress) => {
-      const max = n - 1;
-      const f = Math.max(0, Math.min(max, progress * max));
-      const i0 = Math.floor(f);
-      const i1 = Math.min(max, i0 + 1);
-      const t = f - i0;
+  function fitCanvas(canvas) {
+    const parent = canvas.parentElement;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const rect = parent.getBoundingClientRect();
+    const w = Math.max(320, Math.floor(rect.width));
+    const h = Math.max(240, Math.floor(rect.height));
+    canvas.style.width = `${w}px`;
+    canvas.style.height = `${h}px`;
+    canvas.width = Math.floor(w * dpr);
+    canvas.height = Math.floor(h * dpr);
+    const ctx = canvas.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { ctx, w, h };
+  }
 
-      frames.forEach((img, i) => {
-        let opacity = 0;
-        if (i === i0) opacity = 1 - t;
-        if (i === i1) opacity = t;
-        if (i0 === i1 && i === i0) opacity = 1;
-        img.style.opacity = String(opacity);
-        img.classList.toggle("is-active", opacity > 0.05);
-      });
-
-      const idx = Math.round(f);
-      if (map.num) map.num.textContent = pad(idx);
-      if (map.bar) map.bar.style.width = `${progress * 100}%`;
-      if (map.title) map.title.textContent = copy[idx].title;
-      if (map.text) map.text.textContent = copy[idx].text;
-      setTicks(map.ticks, idx);
-    };
-
-    apply(0);
-
-    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
-      apply(1);
+  /** Draw exactly one frame — no blending/layering. */
+  function drawFrame(canvas, images, index) {
+    const { ctx, w, h } = fitCanvas(canvas);
+    const img = images[Math.max(0, Math.min(images.length - 1, index))];
+    if (!img || !img.naturalWidth) {
+      ctx.fillStyle = "#0c0f0d";
+      ctx.fillRect(0, 0, w, h);
       return;
     }
+    const scale = Math.max(w / img.naturalWidth, h / img.naturalHeight);
+    const dw = img.naturalWidth * scale;
+    const dh = img.naturalHeight * scale;
+    const dx = (w - dw) / 2;
+    const dy = (h - dh) / 2;
+    ctx.fillStyle = "#0c0f0d";
+    ctx.fillRect(0, 0, w, h);
+    ctx.drawImage(img, dx, dy, dw, dh);
+  }
 
-    const state = { p: 0 };
-    gsap.to(state, {
-      p: 1,
-      ease: "none",
-      scrollTrigger: {
-        trigger: section,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 0.5,
-        onUpdate: (self) => apply(self.progress),
-      },
+  function bindReel({ sectionId, folder, count, copy, numSel, totalSel, titleSel, textSel, ticksSel, barSel }) {
+    const section = document.getElementById(sectionId);
+    const canvas = section && section.querySelector("canvas[data-reel]");
+    if (!section || !canvas) return Promise.resolve();
+
+    const num = document.querySelector(numSel);
+    const total = document.querySelector(totalSel);
+    const title = document.querySelector(titleSel);
+    const text = document.querySelector(textSel);
+    const ticks = document.querySelector(ticksSel);
+    const bar = document.querySelector(barSel);
+    if (total) total.textContent = pad(count);
+
+    let frameIndex = 0;
+
+    return loadReel(folder, count).then((images) => {
+      const apply = (progress) => {
+        const p = Math.max(0, Math.min(1, progress));
+        const idx = Math.round(p * (count - 1));
+        if (idx !== frameIndex || true) {
+          frameIndex = idx;
+          drawFrame(canvas, images, idx);
+        }
+        if (num) num.textContent = pad(idx + 1);
+        if (bar) bar.style.width = `${p * 100}%`;
+        const c = pick(copy, p);
+        if (title) title.textContent = c.title;
+        if (text) text.textContent = c.text;
+        setTicks(ticks, p);
+      };
+
+      apply(0);
+      window.addEventListener("resize", () => drawFrame(canvas, images, frameIndex));
+
+      if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
+        apply(1);
+        return;
+      }
+
+      const state = { p: 0 };
+      gsap.to(state, {
+        p: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.35,
+          onUpdate: (self) => apply(self.progress),
+        },
+      });
     });
   }
 
-  function init() {
+  async function init() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
       gsap.registerPlugin(ScrollTrigger);
-
       const top = document.querySelector("[data-top]");
       if (top) {
         ScrollTrigger.create({
@@ -95,45 +157,54 @@
           onLeaveBack: () => top.classList.remove("is-solid"),
         });
       }
-
       if (!reduce) {
         gsap.to("[data-scroll-hint]", {
           autoAlpha: 0,
           scrollTrigger: { trigger: "#hero", start: "top top", end: "+=120", scrub: true },
         });
-        gsap.to(".hero__photo", {
-          scale: 1.08,
-          ease: "none",
-          scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true },
-        });
       }
     }
 
     if (reduce) {
-      document.querySelectorAll("[data-sequence]").forEach((stage) => {
-        const frames = stage.querySelectorAll(".seq-frame");
-        frames.forEach((img, i) => {
-          img.style.opacity = i === frames.length - 1 ? "1" : "0";
-        });
-      });
+      await Promise.all([
+        loadReel("cake", CAKE_COUNT).then((imgs) => {
+          const c = document.querySelector('[data-reel="cake"]');
+          if (c) drawFrame(c, imgs, CAKE_COUNT - 1);
+        }),
+        loadReel("house", HOUSE_COUNT).then((imgs) => {
+          const c = document.querySelector('[data-reel="house"]');
+          if (c) drawFrame(c, imgs, HOUSE_COUNT - 1);
+        }),
+      ]);
       return;
     }
 
-    bindSequence("cake", cakeCopy, {
-      num: document.querySelector("[data-cake-num]"),
-      title: document.querySelector("[data-cake-title]"),
-      text: document.querySelector("[data-cake-text]"),
-      ticks: document.querySelector("[data-cake-ticks]"),
-      bar: document.querySelector("[data-cake-bar]"),
-    });
-
-    bindSequence("house", houseCopy, {
-      num: document.querySelector("[data-house-num]"),
-      title: document.querySelector("[data-house-title]"),
-      text: document.querySelector("[data-house-text]"),
-      ticks: document.querySelector("[data-house-ticks]"),
-      bar: document.querySelector("[data-house-bar]"),
-    });
+    await Promise.all([
+      bindReel({
+        sectionId: "cake",
+        folder: "cake",
+        count: CAKE_COUNT,
+        copy: cakeCopy,
+        numSel: "[data-cake-num]",
+        totalSel: "[data-cake-total]",
+        titleSel: "[data-cake-title]",
+        textSel: "[data-cake-text]",
+        ticksSel: "[data-cake-ticks]",
+        barSel: "[data-cake-bar]",
+      }),
+      bindReel({
+        sectionId: "house",
+        folder: "house",
+        count: HOUSE_COUNT,
+        copy: houseCopy,
+        numSel: "[data-house-num]",
+        totalSel: "[data-house-total]",
+        titleSel: "[data-house-title]",
+        textSel: "[data-house-text]",
+        ticksSel: "[data-house-ticks]",
+        barSel: "[data-house-bar]",
+      }),
+    ]);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
