@@ -23,6 +23,7 @@
 | [Каюта](https://alexandr-mailru.github.io/landings-portfolio/03-kayuta/) | Лендинг HTML/CSS — ресторан · мягкий свет · адаптив · демо |
 | [Домашняя еда](https://alexandr-mailru.github.io/landings-portfolio/04-domashnyaya-eda/) | Лендинг HTML/CSS — кулинария · мультистраничный · ФЗ?152 · демо |
 | [СЛОЙ](https://alexandr-mailru.github.io/landings-portfolio/05-sloy/) | Лендинг HTML/CSS — интерьер · immersive · адаптив · демо |
+| [ДОМНА](https://alexandr-mailru.github.io/landings-portfolio/06-domna/) | Мультистраничный HTML под Tilda Zero — промреконструкция · кейсы · ФЗ?152 · демо |
 
 ## Автор
 

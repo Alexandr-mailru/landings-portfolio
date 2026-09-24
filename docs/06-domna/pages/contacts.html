@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Контакты — ДОМНА</title>
+  <meta name="description" content="Связаться с бюро ДОМНА: заявка, телефон, почта, адрес студии." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="../index.html">ДОМНА</a>
+      <nav class="nav" aria-label="Основное меню">
+        <a href="projects.html">Проекты</a>
+        <a href="services.html">Услуги</a>
+        <a href="about.html">Бюро</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <button class="nav-toggle" type="button" data-nav-open aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+  <div class="nav-panel" data-nav-panel>
+    <button class="nav-panel__close" type="button" data-nav-close>Закрыть</button>
+    <a href="projects.html">Проекты</a>
+    <a href="services.html">Услуги</a>
+    <a href="about.html">Бюро</a>
+    <a href="contacts.html">Контакты</a>
+  </div>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap reveal">
+        <p class="eyebrow">Связь · демо</p>
+        <h1>Контакты</h1>
+        <p class="lead">Учебные реквизиты. Адрес, телефон и почта вымышлены и не принимают обращения.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap prose-grid">
+        <div class="reveal">
+          <p class="eyebrow">Студия (вымысел)</p>
+          <h2>Демо-адрес: Москва</h2>
+          <p>Реальный офис не существует. Ниже — плейсхолдеры для вёрстки контактов.</p>
+          <p><a href="mailto:hello@domna.demo">hello@domna.demo</a> (не принимает почту)<br /><span>+7 (495) 000-00-00</span> (учебный номер)</p>
+        </div>
+        <form class="form-grid reveal" data-demo-form>
+          <label>Имя
+            <input name="name" required />
+          </label>
+          <label>Email
+            <input type="email" name="email" required />
+          </label>
+          <label class="full">Сообщение
+            <textarea name="message" rows="5" required placeholder="Коротко о площадке и сроках"></textarea>
+          </label>
+          <label class="full consent">
+            <input type="checkbox" name="pdn" required />
+            <span>Согласен(на) на <a href="privacy.html">обработку персональных данных</a> (демо: данные не уходят на сервер)</span>
+          </label>
+          <div class="full">
+            <button class="btn btn-primary" type="submit">Отправить</button>
+            <p class="form-note" data-form-note></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__bottom">
+      <span>© ДОМНА · учебное демо · не оферта</span>
+      <a href="privacy.html">Политика ПДн</a>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

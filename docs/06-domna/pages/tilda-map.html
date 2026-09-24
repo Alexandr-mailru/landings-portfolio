@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Карта сборки в Tilda Zero — ДОМНА</title>
+  <meta name="description" content="Пошаговая карта блоков Tilda Zero для гигантского многостраничного проекта ДОМНА." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body class="tilda-map">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="../index.html">ДОМНА</a>
+      <nav class="nav">
+        <a href="../index.html">Прототип</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <button class="nav-toggle" type="button" data-nav-open aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+  <div class="nav-panel" data-nav-panel>
+    <button class="nav-panel__close" type="button" data-nav-close>Закрыть</button>
+    <a href="../index.html">Прототип HTML</a>
+    <a href="#pages">Страницы</a>
+    <a href="#tokens">Стили</a>
+  </div>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow" style="color:#c45c26">Tilda Zero · сборка</p>
+        <h1>Гигантский проект ДОМНА</h1>
+        <p class="lead" style="color:#4a453f">Готовый контент + HTML-прототип. Ниже — карта страниц и блоков, чтобы собрать тот же сайт в Tilda за несколько вечеров.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="../index.html">Открыть прототип</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tokens">
+      <div class="wrap">
+        <h2>Дизайн-токены</h2>
+        <p>В Tilda → Настройки сайта → Цвета / Шрифты.</p>
+        <table class="block-table">
+          <thead>
+            <tr><th>Токен</th><th>Значение</th><th>Куда</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Фон</td><td><span class="chip">#141210</span></td><td>Body / секции</td></tr>
+            <tr><td>Текст</td><td><span class="chip">#ECE6DC</span></td><td>Основной текст</td></tr>
+            <tr><td>Акцент</td><td><span class="chip">#C45C26</span></td><td>Кнопки, eyebrow</td></tr>
+            <tr><td>Дисплей</td><td>Syne ExtraBold</td><td>Заголовки (подключить через Fonts)</td></tr>
+            <tr><td>Текст</td><td>Manrope</td><td>Абзацы, меню</td></tr>
+            <tr><td>Радиус</td><td>0</td><td>Без «карточности», прямые углы</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="pages" style="background:#e7ddd0">
+      <div class="wrap">
+        <h2>Структура сайта (7 страниц)</h2>
+        <table class="block-table">
+          <thead>
+            <tr><th>URL в Tilda</th><th>Назначение</th><th>Ориентир в прототипе</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>/</td><td>Главная: hero, подход, проекты, услуги, цитата, цифры, бриф</td><td>index.html</td></tr>
+            <tr><td>/projects</td><td>Сетка кейсов</td><td>pages/projects.html</td></tr>
+            <tr><td>/projects/severnaya-nit</td><td>Длинный кейс</td><td>pages/case-zavod.html</td></tr>
+            <tr><td>/services</td><td>Прайс-лист услуг</td><td>pages/services.html</td></tr>
+            <tr><td>/about</td><td>О бюро и команда</td><td>pages/about.html</td></tr>
+            <tr><td>/contacts</td><td>Адрес + форма</td><td>pages/contacts.html</td></tr>
+            <tr><td>/privacy</td><td>Политика ПДн</td><td>pages/privacy.html</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Главная — порядок блоков Zero</h2>
+        <table class="block-table">
+          <thead>
+            <tr><th>#</th><th>Тип блока / приём</th><th>Содержание</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>ME301 / Cover на весь экран</td><td>Фон-фото цеха, логотип в меню, H1 «ДОМНА», lead, 2 кнопки, мета-ряд 48 / 12 / 2004</td></tr>
+            <tr><td>2</td><td>Текст + нумерованный список (T123 / Zero columns)</td><td>«Не декорация руин…» + 01–04 этапы</td></tr>
+            <tr><td>3</td><td>Галерея / Feature cards без скруглений</td><td>3 проекта с подписями город · площадь</td></tr>
+            <tr><td>4</td><td>Список услуг (T176)</td><td>4 строки: название, описание, цена</td></tr>
+            <tr><td>5</td><td>Cover-цитата</td><td>Цитата вымышленного основателя на full-bleed фото</td></tr>
+            <tr><td>6</td><td>Цифры (T142)</td><td>1,2 млн м² · 36 · 9 · 14</td></tr>
+            <tr><td>7</td><td>Form BF302 + чекбокс ПДн</td><td>Бриф: имя, контакт, адрес, цель</td></tr>
+            <tr><td>8</td><td>Footer FO301</td><td>Колонки: о бюро, меню, контакты, ссылка на /privacy</td></tr>
+          </tbody>
+        </table>
+
+        <h2 style="margin-top:3rem">Кейс — блоки</h2>
+        <table class="block-table">
+          <thead>
+            <tr><th>#</th><th>Блок</th><th>Содержание</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Cover 70vh</td><td>Название объекта + 4 факта</td></tr>
+            <tr><td>2</td><td>2 колонки текста</td><td>Задача / Решение</td></tr>
+            <tr><td>3</td><td>Галерея 2×2</td><td>4 кадра объекта</td></tr>
+            <tr><td>4</td><td>Таймлайн</td><td>Исследования → Концепция → Реализация</td></tr>
+            <tr><td>5</td><td>CTA</td><td>«Похожая задача?»</td></tr>
+          </tbody>
+        </table>
+
+        <h2 style="margin-top:3rem">Чеклист перед публикацией</h2>
+        <div class="service-list">
+          <div class="service-row"><h3>Формы</h3><p>Tilda Forms → почта или Telegram. Обязательный пустой чекбокс согласия.</p><em>152-ФЗ</em></div>
+          <div class="service-row"><h3>Политика</h3><p>Страница /privacy в меню футера и ссылка из чекбокса.</p><em>обязательно</em></div>
+          <div class="service-row"><h3>Адаптив</h3><p>Проверить Cover и таблицы на 320 / 768 / 1280.</p><em>Zero</em></div>
+          <div class="service-row"><h3>Скорость</h3><p>Сжать фото до WebP, ленивая загрузка галерей.</p><em>Tilda CDN</em></div>
+          <div class="service-row"><h3>Домен</h3><p>Подключить свой домен, HTTPS, фавикон «Д».</p><em>настройки</em></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:#e7ddd0">
+      <div class="wrap">
+        <h2>Объём для заказчика / портфолио</h2>
+        <p>Это не «лендинг из 6 блоков», а полноценный сайт бюро:</p>
+        <ul>
+          <li>7 страниц с уникальными текстами</li>
+          <li>~25–35 блоков Zero на всём проекте</li>
+          <li>1 детальный кейс + сетка проектов</li>
+          <li>2 формы с согласием ПДн</li>
+          <li>Дизайн-система (цвета, шрифты, тон)</li>
+          <li>HTML-прототип для согласования до сборки в Tilda</li>
+        </ul>
+        <p><strong>Срок сборки в Tilda (оценка):</strong> 5–8 рабочих дней при готовых фото. Цифры стоимости услуг на сайте — демо-контент, не оферта.</p>
+        <p><strong>Правовой минимум:</strong> вымышленные кейсы помечены; формы не шлют ПДн без боевого Forms; политика /privacy; сток Unsplash не выдаём за съёмку объектов бюро.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" style="border-color:rgba(28,25,22,.12)">
+    <div class="wrap site-footer__bottom" style="border-color:rgba(28,25,22,.12);color:#6b645c">
+      <span>© ДОМНА · учебное демо · не оферта</span>
+      <a href="../index.html" style="color:#c45c26">Открыть главную</a>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

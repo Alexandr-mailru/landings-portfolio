@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Политика обработки персональных данных — ДОМНА</title>
+  <meta name="description" content="Политика обработки персональных данных демо-сайта бюро ДОМНА (152-ФЗ)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="../index.html">ДОМНА</a>
+      <nav class="nav"><a href="../index.html">На главную</a></nav>
+      <button class="nav-toggle" type="button" data-nav-open aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+  <div class="nav-panel" data-nav-panel>
+    <button class="nav-panel__close" type="button" data-nav-close>Закрыть</button>
+    <a href="../index.html">На главную</a>
+    <a href="contacts.html">Контакты</a>
+  </div>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">152-ФЗ</p>
+        <h1>Политика обработки персональных данных</h1>
+      </div>
+    </section>
+    <section class="section">
+      <div class="wrap legal">
+        <p>Учебный демо-проект для портфолио (прототип под Tilda). Логика политики соответствует ФЗ‑152 «О персональных данных». Это не действующее бюро и не коммерческий сервис.</p>
+        <p>Демонстрационный оператор: проект «ДОМНА» (учебный сайт). В боевом проекте здесь указывают наименование / ФИО, ИНН, адрес и e-mail ответственного за ПДн.</p>
+        <h2>1. Какие данные собираем</h2>
+        <p>При отправке формы в интерфейсе могут запрашиваться: имя, контакт (телефон / Telegram / email), сведения о площадке и текст обращения. <strong>На этом статическом демо данные никуда не отправляются и на сервере не хранятся</strong> — форма имитирует отправку в браузере.</p>
+        <h2>2. Цели</h2>
+        <p>Демонстрация UX формы заявки и согласия. Рекламных и маркетинговых рассылок нет. В боевой Tilda-сборке цель — ответ на заявку и уточнение брифа.</p>
+        <h2>3. Правовые основания</h2>
+        <p>Согласие субъекта персональных данных (ст. 6, 9 ФЗ‑152), отмечаемое обязательным чекбоксом. Согласие можно не давать — тогда форму отправить нельзя.</p>
+        <h2>4. Срок хранения</h2>
+        <p>В демо — до перезагрузки страницы / закрытия вкладки (данных на сервере нет). В боевом проекте: до 12 месяцев с последнего контакта или до отзыва согласия — что наступит раньше.</p>
+        <h2>5. Передача третьим лицам</h2>
+        <p>В демо передачи нет. В Tilda возможна передача сервисам Forms / почты / Telegram по настройкам заказчика. Трансграничная передача — только при использовании зарубежных интеграций.</p>
+        <h2>6. Права субъекта</h2>
+        <p>Для реального сервиса: доступ, уточнение, удаление, отзыв согласия. В демо достаточно не отправлять форму. Учебный контакт: hello@domna.demo (не принимает почту).</p>
+        <h2>7. Cookie и сторонние материалы</h2>
+        <p>Аналитические и рекламные cookie не подключаются. Стоковые фото загружаются с CDN Unsplash по их лицензии (свободное использование; это не фото реальных объектов бюро). Шрифты — Google Fonts.</p>
+        <p>Дата демо-редакции: 24 сентября 2026 г.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap site-footer__bottom"><span>© ДОМНА · учебное демо · не оферта</span></div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
