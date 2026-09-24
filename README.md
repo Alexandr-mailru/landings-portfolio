@@ -1,29 +1,29 @@
-п»ї# РџРѕСЂС‚С„РѕР»РёРѕ
+# Портфолио
 
-РҐР°Р± СѓС‡РµР±РЅС‹С… РїСЂРѕРµРєС‚РѕРІ: Django Рё Next.js РїСЂРёР»РѕР¶РµРЅРёСЏ, Р»РµРЅРґРёРЅРіРё РЅР° HTML/CSS/JS. РџСѓР±Р»РёРєР°С†РёСЏ С‡РµСЂРµР· GitHub Pages РёР· РїР°РїРєРё `docs/`.
+Хаб учебных проектов: Django и Next.js приложения, лендинги на HTML/CSS/JS. Публикация через GitHub Pages из папки `docs/`.
 
-**РЎР°Р№С‚:** [alexandr-mailru.github.io/landings-portfolio](https://alexandr-mailru.github.io/landings-portfolio/)
+**Сайт:** [alexandr-mailru.github.io/landings-portfolio](https://alexandr-mailru.github.io/landings-portfolio/)
 
-## РџСЂРёР»РѕР¶РµРЅРёСЏ (Р¶РёРІС‹Рµ РґРµРјРѕ)
+## Приложения (живые демо)
 
-| РџСЂРѕРµРєС‚ | РћРїРёСЃР°РЅРёРµ |
+| Проект | Описание |
 |--------|----------|
-| [РЎРЅР°Р±РћС„РёСЃ](https://alexandr-mailru.github.io/landings-portfolio/snab-office/) | РњР°РіР°Р·РёРЅ РЅР° Next.js вЂ” РєР°С‚Р°Р»РѕРі В· РєРѕСЂР·РёРЅР° В· Р·Р°РєР°Р·С‹ В· 1РЎ CommerceML В· Р¤Р—вЂ‘152 В· РґРµРјРѕ |
-| [РљРѕРЅС‚СѓСЂ CRM](https://alexandr-mailru.github.io/landings-portfolio/kontur-crm/) | CRM РЅР° Django вЂ” РєР»РёРµРЅС‚С‹ В· СЃРґРµР»РєРё В· РІРѕСЂРѕРЅРєР° В· Р¤Р—вЂ‘152 В· РґРµРјРѕ |
-| [РЎРµРІРµСЂРЅС‹Р№ РјР°РіР°Р·РёРЅ](https://alexandr-mailru.github.io/landings-portfolio/severny-shop/) | РњР°РіР°Р·РёРЅ РЅР° Django вЂ” РєР°С‚Р°Р»РѕРі В· РєРѕСЂР·РёРЅР° В· Р·Р°РєР°Р·С‹ В· Р¤Р—вЂ‘152 В· РґРµРјРѕ |
-| [РћСЃС‚Р°С‚РєРё в†’ РЈР¶РёРЅ](https://alexandr-mailru.github.io/landings-portfolio/ostratki-uzhin/) | РЎРµСЂРІРёСЃ РЅР° Django вЂ” СЂРµС†РµРїС‚С‹ В· API В· PDF В· Р¤Р—вЂ‘152 В· РґРµРјРѕ |
-| [РљР»СѓР± СЃРѕР±Р°Рє](https://alexandr-mailru.github.io/landings-portfolio/dogs-club/) | РџР»Р°С‚С„РѕСЂРјР° РЅР° Django вЂ” СЃРѕР±Р°РєРё В· РѕС‚Р·С‹РІС‹ В· РјРѕРґРµСЂР°С†РёСЏ В· Р¤Р—вЂ‘152 В· РґРµРјРѕ |
+| [СнабОфис](https://alexandr-mailru.github.io/landings-portfolio/snab-office/) | Магазин на Next.js — каталог · корзина · заказы · 1С CommerceML · ФЗ?152 · демо |
+| [Контур CRM](https://alexandr-mailru.github.io/landings-portfolio/kontur-crm/) | CRM на Django — клиенты · сделки · воронка · ФЗ?152 · демо |
+| [Северный магазин](https://alexandr-mailru.github.io/landings-portfolio/severny-shop/) | Магазин на Django — каталог · корзина · заказы · ФЗ?152 · демо |
+| [Остатки > Ужин](https://alexandr-mailru.github.io/landings-portfolio/ostratki-uzhin/) | Сервис на Django — рецепты · API · PDF · ФЗ?152 · демо |
+| [Клуб собак](https://alexandr-mailru.github.io/landings-portfolio/dogs-club/) | Платформа на Django — собаки · отзывы · модерация · ФЗ?152 · демо |
 
-## Р›РµРЅРґРёРЅРіРё (РґРµРјРѕ)
+## Лендинги (демо)
 
-| РџСЂРѕРµРєС‚ | РћРїРёСЃР°РЅРёРµ |
+| Проект | Описание |
 |--------|----------|
-| [MORГ‰](https://alexandr-mailru.github.io/landings-portfolio/01-more-studio/) | Р›РµРЅРґРёРЅРі HTML/CSS вЂ” СЃС‚СѓРґРёСЏ РєСЂР°СЃРѕС‚С‹ В· С‚С‘РјРЅС‹Р№ Р»СЋРєСЃ В· Р°РґР°РїС‚РёРІ В· РґРµРјРѕ |
-| [Р”РћРњ/Р›РРќРРЇ](https://alexandr-mailru.github.io/landings-portfolio/02-domlinia/) | Р›РµРЅРґРёРЅРі HTML/CSS вЂ” СЂРµРјРѕРЅС‚ РєРІР°СЂС‚РёСЂ В· Р±СЂСѓС‚Р°Р»РёР·Рј В· Р°РґР°РїС‚РёРІ В· РґРµРјРѕ |
-| [РљР°СЋС‚Р°](https://alexandr-mailru.github.io/landings-portfolio/03-kayuta/) | Р›РµРЅРґРёРЅРі HTML/CSS вЂ” СЂРµСЃС‚РѕСЂР°РЅ В· РјСЏРіРєРёР№ СЃРІРµС‚ В· Р°РґР°РїС‚РёРІ В· РґРµРјРѕ |
-| [Р”РѕРјР°С€РЅСЏСЏ РµРґР°](https://alexandr-mailru.github.io/landings-portfolio/04-domashnyaya-eda/) | Р›РµРЅРґРёРЅРі HTML/CSS вЂ” РєСѓР»РёРЅР°СЂРёСЏ В· РјСѓР»СЊС‚РёСЃС‚СЂР°РЅРёС‡РЅС‹Р№ В· Р¤Р—вЂ‘152 В· РґРµРјРѕ |
-| [РЎР›РћР™](https://alexandr-mailru.github.io/landings-portfolio/05-sloy/) | Р›РµРЅРґРёРЅРі HTML/CSS вЂ” РёРЅС‚РµСЂСЊРµСЂ В· immersive В· Р°РґР°РїС‚РёРІ В· РґРµРјРѕ |
+| [MORE](https://alexandr-mailru.github.io/landings-portfolio/01-more-studio/) | Лендинг HTML/CSS — студия красоты · тёмный люкс · адаптив · демо |
+| [ДОМ/ЛИНИЯ](https://alexandr-mailru.github.io/landings-portfolio/02-domlinia/) | Лендинг HTML/CSS — ремонт квартир · брутализм · адаптив · демо |
+| [Каюта](https://alexandr-mailru.github.io/landings-portfolio/03-kayuta/) | Лендинг HTML/CSS — ресторан · мягкий свет · адаптив · демо |
+| [Домашняя еда](https://alexandr-mailru.github.io/landings-portfolio/04-domashnyaya-eda/) | Лендинг HTML/CSS — кулинария · мультистраничный · ФЗ?152 · демо |
+| [СЛОЙ](https://alexandr-mailru.github.io/landings-portfolio/05-sloy/) | Лендинг HTML/CSS — интерьер · immersive · адаптив · демо |
 
-## РђРІС‚РѕСЂ
+## Автор
 
 GitHub: **Alexandr-mailru**
