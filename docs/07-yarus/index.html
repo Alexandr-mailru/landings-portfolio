@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ЯРУС — процессная визуализация для брендов</title>
-  <meta name="description" content="ЯРУС — демо scroll-визуализаций: фотореалистичная сборка торта и строительство дома. Для девелоперов, HoReCa и продуктовых брендов." />
+  <title>ЯРУС — scroll-таймлапс сборки</title>
+  <meta name="description" content="Фотореалистичный scroll-таймлапс: торт покрывается кремом, дом собирается кадр за кадром. GSAP ScrollTrigger video scrub." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://images.unsplash.com" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
 </head>
@@ -17,126 +16,113 @@
   <header class="top" data-top>
     <a class="brand" href="#hero">ЯРУС</a>
     <nav aria-label="Разделы">
-      <a href="#cake">Сборка торта</a>
-      <a href="#house">Строительство</a>
+      <a href="#cake">Торт</a>
+      <a href="#house">Дом</a>
       <a href="#offer">Для компаний</a>
     </nav>
   </header>
 
   <main id="main">
     <section class="hero" id="hero">
-      <img
-        class="hero__photo"
-        src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2400&q=85"
-        alt=""
-        width="2400"
-        height="1600"
-        fetchpriority="high"
-      />
+      <video class="hero__video" autoplay muted loop playsinline poster="">
+        <source src="media/cake-process.mp4" type="video/mp4" />
+      </video>
       <div class="hero__shade" aria-hidden="true"></div>
       <div class="hero__copy">
         <p class="brand-mark">ЯРУС</p>
-        <h1>Покажите сборку так, чтобы клиент остался на сайте</h1>
-        <p class="hero__lead">Фотореалистичный scroll-процесс: торт собирается слой за слоем, дом растёт от фундамента до ключей.</p>
-        <a class="cta" href="#cake">Смотреть процесс</a>
+        <h1>Таймлапс, которым крутит скролл</h1>
+        <p class="hero__lead">Листайте вниз — видео приготовления торта и стройки дома идут строго по положению страницы. Вперёд и назад.</p>
+        <a class="cta" href="#cake">Запустить сборку</a>
       </div>
-      <p class="scroll-hint" data-scroll-hint>Листайте вниз</p>
+      <p class="scroll-hint" data-scroll-hint>Скролл = таймкод</p>
     </section>
 
     <section class="intro">
-      <p class="intro__label">Как это работает</p>
-      <h2>Один экран. Длинный скролл. Кадр меняется вместе с пальцем.</h2>
-      <p>Подход как у продуктовых сайтов Apple и строительных кейсов Lamacraft: сцена закреплена, анимация привязана к прокрутке. Клиент управляет темпом и видит каждый этап.</p>
+      <p class="intro__label">Техника</p>
+      <h2>Не слайдшоу. Настоящий scrub видео.</h2>
+      <p>Как у продуктовых сайтов Apple: секция закреплена, а <code>video.currentTime</code> привязан к прогрессу скролла. Получается управляемый таймлапс — торт собирается, дом растёт.</p>
     </section>
 
-    <!-- CAKE -->
-    <section class="runway" id="cake" aria-label="Фотореалистичная сборка торта">
-      <div class="runway__pin">
-        <div class="runway__media" aria-hidden="true">
-          <figure class="frame is-active" data-frame="0">
-            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="eager" />
-          </figure>
-          <figure class="frame" data-frame="1">
-            <img src="https://images.unsplash.com/photo-1588196744439-b2658251990a?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
-          </figure>
-          <figure class="frame" data-frame="2">
-            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
-          </figure>
-          <figure class="frame" data-frame="3">
-            <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
-          </figure>
-          <figure class="frame" data-frame="4">
-            <img src="https://images.unsplash.com/photo-1488477181947-6428a0291777?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
-          </figure>
-          <figure class="frame" data-frame="5">
-            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
-          </figure>
-          <div class="runway__vignette"></div>
+    <!-- CAKE TIMELAPSE -->
+    <section class="scrub" id="cake" aria-label="Таймлапс приготовления торта">
+      <div class="scrub__pin">
+        <div class="scrub__stage">
+          <video
+            class="scrub__video"
+            data-scrub-video="cake"
+            muted
+            playsinline
+            preload="auto"
+            disablepictureinpicture
+          >
+            <source src="media/cake-process.mp4" type="video/mp4" data-seg="0" />
+          </video>
+          <video
+            class="scrub__video scrub__video--next"
+            data-scrub-video-b="cake"
+            muted
+            playsinline
+            preload="auto"
+            disablepictureinpicture
+          >
+            <source src="media/cake-long.mp4" type="video/mp4" />
+          </video>
+          <div class="scrub__progress" aria-hidden="true"><i data-cake-bar></i></div>
         </div>
 
-        <aside class="runway__panel">
-          <p class="eyebrow">Глава 01 · Кондитерская линия</p>
-          <p class="counter"><span data-cake-num>01</span><span class="counter__sep">/</span>06</p>
-          <h2 data-cake-title>Подготовка станции</h2>
-          <p class="runway__text" data-cake-text>Чистый стол, инструменты и база. С этого кадра начинается любая серия для кондитерского бренда или сети кафе.</p>
-          <ol class="rail" data-cake-rail aria-label="Этапы сборки торта">
-            <li class="is-on">Станция</li>
-            <li>Коржи</li>
-            <li>Сборка</li>
+        <aside class="scrub__panel">
+          <p class="eyebrow">Глава 01 · Кондитерский таймлапс</p>
+          <p class="counter"><span data-cake-pct>0</span>%</p>
+          <h2 data-cake-title>Станция готова</h2>
+          <p class="scrub__text" data-cake-text>Крутите скролл — крем ложится на торт в реальном процессе съёмки. Это не набор фото, а непрерывный таймлапс.</p>
+          <ul class="ticks" data-cake-ticks>
+            <li class="is-on">Старт</li>
+            <li>Выравнивание</li>
             <li>Крем</li>
             <li>Декор</li>
-            <li>Подача</li>
-          </ol>
+            <li>Финиш</li>
+          </ul>
         </aside>
       </div>
     </section>
 
     <section class="bridge">
       <div class="bridge__inner">
-        <p class="eyebrow eyebrow--light">Один принцип для двух индустрий</p>
-        <h2>Сначала несущая конструкция. Потом вкус, свет и доверие.</h2>
-        <p>Кондитер и генподрядчик продают одно и то же: предсказуемый процесс. Scroll-сборка делает его видимым за 15–20 секунд внимания.</p>
+        <p class="eyebrow eyebrow--light">Тот же приём</p>
+        <h2>От крема — к каркасу. Скролл снова становится монтажным столом.</h2>
+        <p>Дальше — таймлапс сборки дома: от площадки до готового каркаса. Листайте медленно, чтобы увидеть каждый этап стройки.</p>
       </div>
     </section>
 
-    <!-- HOUSE -->
-    <section class="runway runway--house" id="house" aria-label="Фотореалистичное строительство дома">
-      <div class="runway__pin">
-        <div class="runway__media" aria-hidden="true">
-          <figure class="frame is-active" data-frame="0">
-            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
-          </figure>
-          <figure class="frame" data-frame="1">
-            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
-          </figure>
-          <figure class="frame" data-frame="2">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
-          </figure>
-          <figure class="frame" data-frame="3">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
-          </figure>
-          <figure class="frame" data-frame="4">
-            <img src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
-          </figure>
-          <figure class="frame" data-frame="5">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
-          </figure>
-          <div class="runway__vignette"></div>
+    <!-- HOUSE TIMELAPSE -->
+    <section class="scrub scrub--house" id="house" aria-label="Таймлапс строительства дома">
+      <div class="scrub__pin">
+        <div class="scrub__stage">
+          <video
+            class="scrub__video"
+            data-scrub-video="house"
+            muted
+            playsinline
+            preload="auto"
+            disablepictureinpicture
+          >
+            <source src="media/house-timelapse.webm" type="video/webm" />
+          </video>
+          <div class="scrub__progress" aria-hidden="true"><i data-house-bar></i></div>
         </div>
 
-        <aside class="runway__panel runway__panel--dark">
-          <p class="eyebrow">Глава 02 · Девелопмент</p>
-          <p class="counter"><span data-house-num>01</span><span class="counter__sep">/</span>06</p>
-          <h2 data-house-title>Участок до старта</h2>
-          <p class="runway__text" data-house-text>Пустой холст проекта. Здесь заказчик понимает масштаб ещё до котлована — сильный первый кадр для лендинга ЖК или подрядчика.</p>
-          <ol class="rail" data-house-rail aria-label="Этапы строительства">
+        <aside class="scrub__panel scrub__panel--dark">
+          <p class="eyebrow">Глава 02 · Строительный таймлапс</p>
+          <p class="counter"><span data-house-pct>0</span>%</p>
+          <h2 data-house-title>Площадка до старта</h2>
+          <p class="scrub__text" data-house-text>Дом собирается на глазах: скролл перематывает реальный таймлапс стройки. Остановитесь на любом кадре — конструкция застынет.</p>
+          <ul class="ticks" data-house-ticks>
             <li class="is-on">Участок</li>
-            <li>Котлован</li>
+            <li>Основание</li>
             <li>Каркас</li>
-            <li>Коробка</li>
-            <li>Фасад</li>
-            <li>Сдача</li>
-          </ol>
+            <li>Стены</li>
+            <li>Готово</li>
+          </ul>
         </aside>
       </div>
     </section>
@@ -145,27 +131,27 @@
       <div class="offer__grid">
         <div>
           <p class="eyebrow">Для крупных компаний</p>
-          <h2>Формат, который продаёт процесс, а не слайды</h2>
-          <p class="offer__lead">Готовый паттерн для презентации продукта, стройки, производства или премиальной еды. Заменяем фото на ваши съёмки — логика скролла остаётся.</p>
+          <h2>Ваш процесс — ваш таймлапс под скролл</h2>
+          <p class="offer__lead">Подключаем вашу съёмку производства, стройки или кухни. Клиент сам «собирает» продукт пальцем — выше вовлечение, чем у обычного ролика.</p>
         </div>
         <ul class="offer__list">
           <li>
-            <strong>Девелоперы и генподряд</strong>
-            <span>от котлована до ключей без видео на 200 МБ</span>
+            <strong>Food &amp; HoReCa</strong>
+            <span>сборка блюда / торта от заготовки до подачи</span>
           </li>
           <li>
-            <strong>HoReCa и food-бренды</strong>
-            <span>сборка блюда или торта как аргумент качества</span>
+            <strong>Девелопмент</strong>
+            <span>корпус растёт от котлована до ключей</span>
           </li>
           <li>
-            <strong>Производство и equipment</strong>
+            <strong>Industry &amp; hardware</strong>
             <span>сборка изделия на лендинге продукта</span>
           </li>
         </ul>
       </div>
       <div class="offer__cta-row">
-        <a class="cta" href="mailto:hello@yarus.demo">Обсудить проект</a>
-        <p class="offer__note">Учебное демо для портфолио. Почта-плейсхолдер не принимает письма. В боевой версии — ваш корпоративный домен.</p>
+        <a class="cta cta--dark" href="mailto:hello@yarus.demo">Обсудить проект</a>
+        <p class="offer__note">Учебное демо. В роликах — сток Mixkit и Wikimedia Commons. Почта-плейсхолдер не принимает письма.</p>
       </div>
     </section>
   </main>
@@ -173,7 +159,7 @@
   <footer class="foot">
     <div>
       <strong>ЯРУС</strong>
-      <span>учебное демо · не оферта · сток Unsplash</span>
+      <span>scroll-video scrub · учебное демо · не оферта</span>
     </div>
     <a href="privacy.html">Политика ПДн</a>
   </footer>
