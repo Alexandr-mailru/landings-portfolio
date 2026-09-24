@@ -1,47 +1,69 @@
 (() => {
-  const { makeStage, renderCakeFrame, renderHouseFrame, renderHeroIdle, cakeSteps, houseSteps, fitCanvas } =
-    window.YarusFrames;
+  const cakeCopy = [
+    { title: "Пустая тарелка", text: "Стол и подставка. С этого кадра начинается фотореалистичная сборка." },
+    { title: "Первый корж", text: "Бисквитная основа на месте — несущий ярус торта." },
+    { title: "Крем", text: "Прослойка выравнивает поверхность и готовит следующий ярус." },
+    { title: "Второй ярус", text: "Средний корж садится на крем — силуэт растёт вверх." },
+    { title: "Третий ярус", text: "Верхний этаж собран. Дальше — финальный декор." },
+    { title: "Готовый торт", text: "Крем, ягоды и свеча. Сборка завершена." },
+  ];
 
-  function pick(steps, p) {
-    let cur = steps[0];
-    for (const s of steps) if (p >= s.at) cur = s;
-    return cur;
+  const houseCopy = [
+    { title: "Пустой участок", text: "Площадка до старта. Дальше — фундамент и рост коробки." },
+    { title: "Фундамент", text: "Бетонное основание. Без него стены не держатся." },
+    { title: "Каркас", text: "Деревянный скелет дома поднимается над фундаментом." },
+    { title: "Стены", text: "Коробка закрыта, проёмы под окна уже читаются." },
+    { title: "Крыша", text: "Кровля и остекление — дом почти готов." },
+    { title: "Сдача", text: "Финальный кадр: жилой дом на том же участке." },
+  ];
+
+  function pad(n) {
+    return String(n + 1).padStart(2, "0");
   }
 
-  function setTicks(el, p) {
-    if (!el) return;
-    const items = [...el.children];
-    const idx = Math.min(items.length - 1, Math.floor(p * items.length));
-    items.forEach((li, i) => li.classList.toggle("is-on", i <= idx));
+  function setTicks(root, index) {
+    if (!root) return;
+    [...root.children].forEach((li, i) => li.classList.toggle("is-on", i <= index));
   }
 
-  function bindStage({ id, canvasSel, renderer, steps, pctSel, titleSel, textSel, ticksSel, barSel }) {
-    const section = document.getElementById(id);
-    const canvas = document.querySelector(canvasSel);
-    if (!section || !canvas) return null;
+  function bindSequence(sectionId, copy, map) {
+    const section = document.getElementById(sectionId);
+    const stage = section && section.querySelector("[data-sequence]");
+    if (!section || !stage) return;
 
-    const stage = makeStage(canvas, renderer);
-    const pct = document.querySelector(pctSel);
-    const title = document.querySelector(titleSel);
-    const text = document.querySelector(textSel);
-    const ticks = document.querySelector(ticksSel);
-    const bar = document.querySelector(barSel);
+    const frames = [...stage.querySelectorAll(".seq-frame")];
+    const n = frames.length;
+    if (!n) return;
 
-    const apply = (p) => {
-      stage.setProgress(p);
-      if (pct) pct.textContent = String(Math.round(p * 100));
-      if (bar) bar.style.width = `${p * 100}%`;
-      const s = pick(steps, p);
-      if (title) title.textContent = s.title;
-      if (text) text.textContent = s.text;
-      setTicks(ticks, p);
+    const apply = (progress) => {
+      const max = n - 1;
+      const f = Math.max(0, Math.min(max, progress * max));
+      const i0 = Math.floor(f);
+      const i1 = Math.min(max, i0 + 1);
+      const t = f - i0;
+
+      frames.forEach((img, i) => {
+        let opacity = 0;
+        if (i === i0) opacity = 1 - t;
+        if (i === i1) opacity = t;
+        if (i0 === i1 && i === i0) opacity = 1;
+        img.style.opacity = String(opacity);
+        img.classList.toggle("is-active", opacity > 0.05);
+      });
+
+      const idx = Math.round(f);
+      if (map.num) map.num.textContent = pad(idx);
+      if (map.bar) map.bar.style.width = `${progress * 100}%`;
+      if (map.title) map.title.textContent = copy[idx].title;
+      if (map.text) map.text.textContent = copy[idx].text;
+      setTicks(map.ticks, idx);
     };
 
     apply(0);
 
     if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
       apply(1);
-      return stage;
+      return;
     }
 
     const state = { p: 0 };
@@ -52,47 +74,14 @@
         trigger: section,
         start: "top top",
         end: "bottom bottom",
-        scrub: 0.45,
+        scrub: 0.5,
         onUpdate: (self) => apply(self.progress),
       },
     });
-
-    return stage;
-  }
-
-  function initHero() {
-    const canvas = document.querySelector("[data-hero-canvas]");
-    if (!canvas) return;
-    let size = fitCanvas(canvas);
-    let raf = 0;
-    const tick = (t) => {
-      size.ctx.clearRect(0, 0, size.w, size.h);
-      renderHeroIdle(size.ctx, size.w, size.h, t);
-      // overlay soft house whisper
-      size.ctx.save();
-      size.ctx.globalAlpha = 0.22;
-      renderHouseFrame(size.ctx, size.w, size.h, 0.7 + Math.sin(t * 0.00035) * 0.15);
-      size.ctx.restore();
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    window.addEventListener("resize", () => {
-      size = fitCanvas(canvas);
-    });
-    return () => cancelAnimationFrame(raf);
   }
 
   function init() {
-    initHero();
-
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) {
-      const cake = document.querySelector('[data-canvas="cake"]');
-      const house = document.querySelector('[data-canvas="house"]');
-      if (cake) makeStage(cake, renderCakeFrame).setProgress(1);
-      if (house) makeStage(house, renderHouseFrame).setProgress(1);
-      return;
-    }
 
     if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
       gsap.registerPlugin(ScrollTrigger);
@@ -107,34 +96,43 @@
         });
       }
 
-      gsap.to("[data-scroll-hint]", {
-        autoAlpha: 0,
-        scrollTrigger: { trigger: "#hero", start: "top top", end: "+=120", scrub: true },
-      });
+      if (!reduce) {
+        gsap.to("[data-scroll-hint]", {
+          autoAlpha: 0,
+          scrollTrigger: { trigger: "#hero", start: "top top", end: "+=120", scrub: true },
+        });
+        gsap.to(".hero__photo", {
+          scale: 1.08,
+          ease: "none",
+          scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true },
+        });
+      }
     }
 
-    bindStage({
-      id: "cake",
-      canvasSel: '[data-canvas="cake"]',
-      renderer: renderCakeFrame,
-      steps: cakeSteps,
-      pctSel: "[data-cake-pct]",
-      titleSel: "[data-cake-title]",
-      textSel: "[data-cake-text]",
-      ticksSel: "[data-cake-ticks]",
-      barSel: "[data-cake-bar]",
+    if (reduce) {
+      document.querySelectorAll("[data-sequence]").forEach((stage) => {
+        const frames = stage.querySelectorAll(".seq-frame");
+        frames.forEach((img, i) => {
+          img.style.opacity = i === frames.length - 1 ? "1" : "0";
+        });
+      });
+      return;
+    }
+
+    bindSequence("cake", cakeCopy, {
+      num: document.querySelector("[data-cake-num]"),
+      title: document.querySelector("[data-cake-title]"),
+      text: document.querySelector("[data-cake-text]"),
+      ticks: document.querySelector("[data-cake-ticks]"),
+      bar: document.querySelector("[data-cake-bar]"),
     });
 
-    bindStage({
-      id: "house",
-      canvasSel: '[data-canvas="house"]',
-      renderer: renderHouseFrame,
-      steps: houseSteps,
-      pctSel: "[data-house-pct]",
-      titleSel: "[data-house-title]",
-      textSel: "[data-house-text]",
-      ticksSel: "[data-house-ticks]",
-      barSel: "[data-house-bar]",
+    bindSequence("house", houseCopy, {
+      num: document.querySelector("[data-house-num]"),
+      title: document.querySelector("[data-house-title]"),
+      text: document.querySelector("[data-house-text]"),
+      ticks: document.querySelector("[data-house-ticks]"),
+      bar: document.querySelector("[data-house-bar]"),
     });
   }
 

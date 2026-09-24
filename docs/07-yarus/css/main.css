@@ -95,12 +95,31 @@ code {
   overflow: hidden;
   background: #1a1814;
 }
-.hero__canvas {
+.hero__photo {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
 }
+.hero__canvas { display: none; }
+
+.seq-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  will-change: opacity;
+  pointer-events: none;
+}
+.seq-frame.is-active {
+  z-index: 1;
+}
+
+.scrub__canvas { display: none; }
 .hero__shade {
   position: absolute;
   inset: 0;
