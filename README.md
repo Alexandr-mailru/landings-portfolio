@@ -4,15 +4,15 @@
 
 **Сайт:** [alexandr-mailru.github.io/landings-portfolio](https://alexandr-mailru.github.io/landings-portfolio/)
 
-## Приложения
+## Приложения (живые демо)
 
 | Проект | Описание |
 |--------|----------|
-| [СнабОфис](https://github.com/Alexandr-mailru/snab-office) | Магазин на Next.js — каталог · корзина · заказы · 1С CommerceML · ФЗ‑152 · GitHub |
-| [Контур CRM](https://github.com/Alexandr-mailru/kontur-crm) | CRM на Django — клиенты · сделки · воронка · ФЗ‑152 · GitHub |
-| [Северный магазин](https://github.com/Alexandr-mailru/severny-shop) | Магазин на Django — каталог · корзина · заказы · ФЗ‑152 · GitHub |
-| [Остатки → Ужин](https://github.com/Alexandr-mailru/ostratki-uzhin) | Сервис на Django — рецепты · API · PDF · ФЗ‑152 · GitHub |
-| [Клуб собак](https://github.com/Alexandr-mailru/dogs-club) | Платформа на Django — собаки · отзывы · модерация · ФЗ‑152 · GitHub |
+| [СнабОфис](https://snab-office.vercel.app/) | Магазин на Next.js — каталог · корзина · заказы · 1С CommerceML · ФЗ‑152 · демо |
+| [Контур CRM](https://kontur-crm.vercel.app/) | CRM на Django — клиенты · сделки · воронка · ФЗ‑152 · демо |
+| [Северный магазин](https://severny-shop.vercel.app/) | Магазин на Django — каталог · корзина · заказы · ФЗ‑152 · демо |
+| [Остатки → Ужин](https://ostratki-uzhin.vercel.app/) | Сервис на Django — рецепты · API · PDF · ФЗ‑152 · демо |
+| [Клуб собак](https://dogs-club.vercel.app/) | Платформа на Django — собаки · отзывы · модерация · ФЗ‑152 · демо |
 
 ## Лендинги (демо)
 
