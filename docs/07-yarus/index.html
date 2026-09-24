@@ -3,203 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ЯРУС — сборка вкуса и дома</title>
-  <meta name="description" content="Учебный демо-сайт: при прокрутке собирается торт и строится дом. HTML + GSAP ScrollTrigger." />
+  <title>ЯРУС — процессная визуализация для брендов</title>
+  <meta name="description" content="ЯРУС — демо scroll-визуализаций: фотореалистичная сборка торта и строительство дома. Для девелоперов, HoReCa и продуктовых брендов." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
   <a class="skip" href="#main">К содержанию</a>
 
-  <header class="top">
+  <header class="top" data-top>
     <a class="brand" href="#hero">ЯРУС</a>
     <nav aria-label="Разделы">
-      <a href="#cake">Торт</a>
-      <a href="#house">Дом</a>
+      <a href="#cake">Сборка торта</a>
+      <a href="#house">Строительство</a>
+      <a href="#offer">Для компаний</a>
     </nav>
   </header>
 
   <main id="main">
     <section class="hero" id="hero">
-      <div class="hero__veil" aria-hidden="true"></div>
+      <img
+        class="hero__photo"
+        src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2400&q=85"
+        alt=""
+        width="2400"
+        height="1600"
+        fetchpriority="high"
+      />
+      <div class="hero__shade" aria-hidden="true"></div>
       <div class="hero__copy">
         <p class="brand-mark">ЯРУС</p>
-        <h1>Слои, которые держат форму</h1>
-        <p class="hero__lead">Листайте вниз — торт соберётся ярус за ярусом, дом вырастет от фундамента до крыши.</p>
-        <a class="cta" href="#cake">Листать сборку</a>
+        <h1>Покажите сборку так, чтобы клиент остался на сайте</h1>
+        <p class="hero__lead">Фотореалистичный scroll-процесс: торт собирается слой за слоем, дом растёт от фундамента до ключей.</p>
+        <a class="cta" href="#cake">Смотреть процесс</a>
       </div>
-      <div class="hero__visual" aria-hidden="true">
-        <div class="hero__orb hero__orb--cake"></div>
-        <div class="hero__orb hero__orb--house"></div>
-      </div>
-      <p class="scroll-hint" data-scroll-hint>скролл</p>
+      <p class="scroll-hint" data-scroll-hint>Листайте вниз</p>
     </section>
 
-    <section class="stage" id="cake" aria-label="Сборка торта">
-      <div class="stage__pin">
-        <div class="stage__copy">
-          <p class="eyebrow">Глава 01</p>
-          <h2>Торт собирается</h2>
-          <p class="stage__lead" data-cake-caption>Стол ждёт основание…</p>
-          <ol class="steps" data-cake-steps aria-hidden="true">
-            <li>Подставка</li>
-            <li>Нижний ярус</li>
+    <section class="intro">
+      <p class="intro__label">Как это работает</p>
+      <h2>Один экран. Длинный скролл. Кадр меняется вместе с пальцем.</h2>
+      <p>Подход как у продуктовых сайтов Apple и строительных кейсов Lamacraft: сцена закреплена, анимация привязана к прокрутке. Клиент управляет темпом и видит каждый этап.</p>
+    </section>
+
+    <!-- CAKE -->
+    <section class="runway" id="cake" aria-label="Фотореалистичная сборка торта">
+      <div class="runway__pin">
+        <div class="runway__media" aria-hidden="true">
+          <figure class="frame is-active" data-frame="0">
+            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="eager" />
+          </figure>
+          <figure class="frame" data-frame="1">
+            <img src="https://images.unsplash.com/photo-1588196744439-b2658251990a?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
+          </figure>
+          <figure class="frame" data-frame="2">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
+          </figure>
+          <figure class="frame" data-frame="3">
+            <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
+          </figure>
+          <figure class="frame" data-frame="4">
+            <img src="https://images.unsplash.com/photo-1488477181947-6428a0291777?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
+          </figure>
+          <figure class="frame" data-frame="5">
+            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
+          </figure>
+          <div class="runway__vignette"></div>
+        </div>
+
+        <aside class="runway__panel">
+          <p class="eyebrow">Глава 01 · Кондитерская линия</p>
+          <p class="counter"><span data-cake-num>01</span><span class="counter__sep">/</span>06</p>
+          <h2 data-cake-title>Подготовка станции</h2>
+          <p class="runway__text" data-cake-text>Чистый стол, инструменты и база. С этого кадра начинается любая серия для кондитерского бренда или сети кафе.</p>
+          <ol class="rail" data-cake-rail aria-label="Этапы сборки торта">
+            <li class="is-on">Станция</li>
+            <li>Коржи</li>
+            <li>Сборка</li>
             <li>Крем</li>
-            <li>Средний ярус</li>
-            <li>Верх</li>
             <li>Декор</li>
+            <li>Подача</li>
           </ol>
-        </div>
-        <div class="stage__art" role="img" aria-label="Анимация сборки торта при прокрутке">
-          <svg class="scene scene--cake" viewBox="0 0 420 460" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="frost" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#fff6ec"/>
-                <stop offset="100%" stop-color="#f0d5b8"/>
-              </linearGradient>
-              <linearGradient id="sponge" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#f2c56b"/>
-                <stop offset="100%" stop-color="#d9993a"/>
-              </linearGradient>
-              <linearGradient id="berry" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#e85d4c"/>
-                <stop offset="100%" stop-color="#a8272a"/>
-              </linearGradient>
-            </defs>
-            <ellipse class="cake-shadow" cx="210" cy="410" rx="120" ry="14" fill="#1a1f1c" opacity=".12"/>
-            <g class="cake-part" data-part="plate">
-              <ellipse cx="210" cy="392" rx="140" ry="18" fill="#d7ddd8"/>
-              <ellipse cx="210" cy="384" rx="132" ry="14" fill="#eef1ee"/>
-            </g>
-            <g class="cake-part" data-part="tier1">
-              <rect x="95" y="300" width="230" height="78" rx="12" fill="url(#sponge)"/>
-              <path d="M95 318c28 12 56-8 84 4s52 16 78-2 48-8 68 6v18H95z" fill="#c47a2e" opacity=".35"/>
-            </g>
-            <g class="cake-part" data-part="cream1">
-              <path d="M92 300c18 22 40 10 58 18s38 22 60 8 42-6 64 10 34 8 54-4v-8c-20 10-36-2-54-8s-42 4-64-6-42-20-60-12-40 4-58-8z" fill="url(#frost)"/>
-            </g>
-            <g class="cake-part" data-part="tier2">
-              <rect x="125" y="220" width="170" height="70" rx="12" fill="url(#sponge)"/>
-              <path d="M125 236c22 10 44-6 66 4s40 14 58-2 32-4 46 6v14H125z" fill="#c47a2e" opacity=".3"/>
-            </g>
-            <g class="cake-part" data-part="cream2">
-              <path d="M122 220c14 18 32 8 46 14s30 18 48 6 34-4 50 8 26 6 42-2v-8c-16 8-28-2-42-6s-34 2-50-4-34-16-48-10-32 2-46-6z" fill="url(#frost)"/>
-            </g>
-            <g class="cake-part" data-part="tier3">
-              <rect x="155" y="150" width="110" height="60" rx="12" fill="url(#sponge)"/>
-            </g>
-            <g class="cake-part" data-part="topping">
-              <circle cx="178" cy="148" r="10" fill="url(#berry)"/>
-              <circle cx="210" cy="140" r="12" fill="url(#berry)"/>
-              <circle cx="242" cy="148" r="10" fill="url(#berry)"/>
-              <path d="M210 128c-6-18-2-28 0-34 8 8 10 22 0 34z" fill="#2f6b3a"/>
-              <g class="candle" transform="translate(198 86)">
-                <rect width="10" height="42" rx="3" fill="#f7f3ea"/>
-                <rect x="2" width="6" height="42" rx="2" fill="#e8c547" opacity=".55"/>
-                <ellipse class="flame" cx="5" cy="-6" rx="5" ry="9" fill="#ffb347"/>
-                <ellipse class="flame-core" cx="5" cy="-4" rx="2" ry="4" fill="#fff3c4"/>
-              </g>
-            </g>
-          </svg>
-        </div>
+        </aside>
       </div>
     </section>
 
     <section class="bridge">
-      <p class="bridge__kicker">Один принцип</p>
-      <h2>Сначала несущая конструкция. Потом вкус и свет.</h2>
-      <p>Кондитер и подрядчик думают одинаково: без нижнего яруса верх не держится.</p>
-    </section>
-
-    <section class="stage stage--house" id="house" aria-label="Строительство дома">
-      <div class="stage__pin">
-        <div class="stage__copy">
-          <p class="eyebrow">Глава 02</p>
-          <h2>Дом строится</h2>
-          <p class="stage__lead" data-house-caption>Разметка участка…</p>
-          <ol class="steps" data-house-steps aria-hidden="true">
-            <li>Участок</li>
-            <li>Фундамент</li>
-            <li>Стены</li>
-            <li>Проёмы</li>
-            <li>Крыша</li>
-            <li>Жизнь</li>
-          </ol>
-        </div>
-        <div class="stage__art" role="img" aria-label="Анимация строительства дома при прокрутке">
-          <svg class="scene scene--house" viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#b7c9d6"/>
-                <stop offset="100%" stop-color="#e7ece8"/>
-              </linearGradient>
-              <linearGradient id="brick" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#c4a07a"/>
-                <stop offset="100%" stop-color="#8f6848"/>
-              </linearGradient>
-              <linearGradient id="roof" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#3d5a6c"/>
-                <stop offset="100%" stop-color="#1f3340"/>
-              </linearGradient>
-            </defs>
-            <rect class="house-part" data-part="sky" x="0" y="0" width="480" height="420" fill="url(#sky)" opacity=".55"/>
-            <g class="house-part" data-part="ground">
-              <path d="M0 340h480v80H0z" fill="#6a7d5c"/>
-              <path d="M0 340c40-18 90-8 140-16s110-22 160-10 100 8 180-8v34H0z" fill="#819872" opacity=".85"/>
-            </g>
-            <g class="house-part" data-part="foundation">
-              <rect x="118" y="292" width="244" height="36" rx="4" fill="#5c6770"/>
-              <rect x="126" y="286" width="228" height="12" fill="#7a8690"/>
-            </g>
-            <g class="house-part" data-part="walls">
-              <rect x="130" y="168" width="220" height="124" fill="url(#brick)"/>
-              <g stroke="#a88462" stroke-width="2" opacity=".45">
-                <line x1="130" y1="200" x2="350" y2="200"/>
-                <line x1="130" y1="232" x2="350" y2="232"/>
-                <line x1="130" y1="264" x2="350" y2="264"/>
-                <line x1="185" y1="168" x2="185" y2="292"/>
-                <line x1="240" y1="168" x2="240" y2="292"/>
-                <line x1="295" y1="168" x2="295" y2="292"/>
-              </g>
-            </g>
-            <g class="house-part" data-part="openings">
-              <rect x="214" y="220" width="52" height="72" rx="4" fill="#2a353c"/>
-              <rect x="150" y="190" width="42" height="42" rx="3" fill="#9ec8e0"/>
-              <rect x="288" y="190" width="42" height="42" rx="3" fill="#9ec8e0"/>
-              <rect x="156" y="196" width="30" height="30" fill="#cfe7f4" opacity=".7"/>
-              <rect x="294" y="196" width="30" height="30" fill="#cfe7f4" opacity=".7"/>
-            </g>
-            <g class="house-part" data-part="roof">
-              <polygon points="110,176 240,78 370,176" fill="url(#roof)"/>
-              <rect x="318" y="108" width="28" height="52" fill="#3d5a6c"/>
-              <g class="smoke">
-                <circle cx="332" cy="96" r="8" fill="#dfe6ea" opacity=".7"/>
-                <circle cx="338" cy="80" r="11" fill="#dfe6ea" opacity=".45"/>
-                <circle cx="328" cy="64" r="14" fill="#dfe6ea" opacity=".28"/>
-              </g>
-            </g>
-            <g class="house-part" data-part="life">
-              <path d="M68 300c0-36 22-66 40-66s40 30 40 66" fill="#3f6b45"/>
-              <rect x="100" y="300" width="10" height="28" fill="#5a3d28"/>
-              <circle cx="400" cy="250" r="18" fill="#f0c35a" opacity=".85"/>
-              <path d="M40 318c30-8 50 6 78 0s52-10 80 2 60 4 90-6 70-2 110 4 62 2 82-8" fill="none" stroke="#4d6348" stroke-width="3" stroke-linecap="round"/>
-            </g>
-          </svg>
-        </div>
+      <div class="bridge__inner">
+        <p class="eyebrow eyebrow--light">Один принцип для двух индустрий</p>
+        <h2>Сначала несущая конструкция. Потом вкус, свет и доверие.</h2>
+        <p>Кондитер и генподрядчик продают одно и то же: предсказуемый процесс. Scroll-сборка делает его видимым за 15–20 секунд внимания.</p>
       </div>
     </section>
 
-    <section class="outro">
-      <p class="brand-mark brand-mark--sm">ЯРУС</p>
-      <h2>Два ремесла. Одна логика сборки.</h2>
-      <p>Учебный демо-проект для портфолио: scroll-сборка на GSAP ScrollTrigger. Не коммерческий сервис.</p>
+    <!-- HOUSE -->
+    <section class="runway runway--house" id="house" aria-label="Фотореалистичное строительство дома">
+      <div class="runway__pin">
+        <div class="runway__media" aria-hidden="true">
+          <figure class="frame is-active" data-frame="0">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
+          </figure>
+          <figure class="frame" data-frame="1">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
+          </figure>
+          <figure class="frame" data-frame="2">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
+          </figure>
+          <figure class="frame" data-frame="3">
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
+          </figure>
+          <figure class="frame" data-frame="4">
+            <img src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
+          </figure>
+          <figure class="frame" data-frame="5">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85" alt="" width="1800" height="1200" loading="lazy" />
+          </figure>
+          <div class="runway__vignette"></div>
+        </div>
+
+        <aside class="runway__panel runway__panel--dark">
+          <p class="eyebrow">Глава 02 · Девелопмент</p>
+          <p class="counter"><span data-house-num>01</span><span class="counter__sep">/</span>06</p>
+          <h2 data-house-title>Участок до старта</h2>
+          <p class="runway__text" data-house-text>Пустой холст проекта. Здесь заказчик понимает масштаб ещё до котлована — сильный первый кадр для лендинга ЖК или подрядчика.</p>
+          <ol class="rail" data-house-rail aria-label="Этапы строительства">
+            <li class="is-on">Участок</li>
+            <li>Котлован</li>
+            <li>Каркас</li>
+            <li>Коробка</li>
+            <li>Фасад</li>
+            <li>Сдача</li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <section class="offer" id="offer">
+      <div class="offer__grid">
+        <div>
+          <p class="eyebrow">Для крупных компаний</p>
+          <h2>Формат, который продаёт процесс, а не слайды</h2>
+          <p class="offer__lead">Готовый паттерн для презентации продукта, стройки, производства или премиальной еды. Заменяем фото на ваши съёмки — логика скролла остаётся.</p>
+        </div>
+        <ul class="offer__list">
+          <li>
+            <strong>Девелоперы и генподряд</strong>
+            <span>от котлована до ключей без видео на 200 МБ</span>
+          </li>
+          <li>
+            <strong>HoReCa и food-бренды</strong>
+            <span>сборка блюда или торта как аргумент качества</span>
+          </li>
+          <li>
+            <strong>Производство и equipment</strong>
+            <span>сборка изделия на лендинге продукта</span>
+          </li>
+        </ul>
+      </div>
+      <div class="offer__cta-row">
+        <a class="cta" href="mailto:hello@yarus.demo">Обсудить проект</a>
+        <p class="offer__note">Учебное демо для портфолио. Почта-плейсхолдер не принимает письма. В боевой версии — ваш корпоративный домен.</p>
+      </div>
     </section>
   </main>
 
   <footer class="foot">
-    <span>© ЯРУС · учебное демо · не оферта</span>
+    <div>
+      <strong>ЯРУС</strong>
+      <span>учебное демо · не оферта · сток Unsplash</span>
+    </div>
     <a href="privacy.html">Политика ПДн</a>
   </footer>
 
