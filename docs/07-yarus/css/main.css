@@ -93,22 +93,21 @@ code {
   align-items: end;
   color: #f7f8f7;
   overflow: hidden;
-  background: #0e1210;
+  background: #1a1814;
 }
-.hero__video {
+.hero__canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0.55;
 }
 .hero__shade {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(8, 12, 10, 0.88) 0%, rgba(8, 12, 10, 0.45) 55%, rgba(8, 12, 10, 0.25) 100%),
-    linear-gradient(180deg, rgba(8, 12, 10, 0.2), rgba(8, 12, 10, 0.75));
+    linear-gradient(90deg, rgba(8, 12, 10, 0.82) 0%, rgba(8, 12, 10, 0.4) 55%, rgba(8, 12, 10, 0.25) 100%),
+    linear-gradient(180deg, rgba(8, 12, 10, 0.15), rgba(8, 12, 10, 0.72));
+  pointer-events: none;
 }
 .hero__copy {
   position: relative;
@@ -242,19 +241,13 @@ code {
   .scrub__stage { min-height: 100svh; }
 }
 
-.scrub__video {
+.scrub__canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  background: #050706;
+  display: block;
 }
-.scrub__video--next {
-  opacity: 0;
-  pointer-events: none;
-}
-.scrub__video.is-front { opacity: 1; z-index: 1; }
 
 .scrub__progress {
   position: absolute;
