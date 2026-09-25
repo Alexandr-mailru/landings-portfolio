@@ -117,7 +117,7 @@ a { color: inherit; }
 
 .scrub {
   position: relative;
-  height: 640vh;
+  height: 720vh;
   background: #0c0e0d;
 }
 .scrub__pin {
@@ -144,6 +144,15 @@ a { color: inherit; }
 @media (min-width: 960px) { .scrub__stage { min-height: 100svh; } }
 .scrub__canvas {
   position: absolute; inset: 0; width: 100%; height: 100%; background: #080a09;
+}
+.scrub__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #080a09;
+  transform: scale(1.02);
 }
 .scrub__progress {
   position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;

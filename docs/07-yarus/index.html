@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ЯРУС — сборка торта по скроллу</title>
-  <meta name="description" content="ЯРУС: scroll-triggered сборка торта из реального ролика. Один кадр за раз." />
+  <meta name="description" content="ЯРУС: scroll-scrub видео сборки торта — как просмотр ролика." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
@@ -23,34 +23,44 @@
 
   <main id="main">
     <section class="hero" id="hero">
-      <img class="hero__photo" src="frames/cake/60.jpg" alt="" width="1280" height="720" fetchpriority="high" />
+      <img class="hero__photo" src="frames/cake/poster.jpg" alt="" width="1280" height="720" fetchpriority="high" />
       <div class="hero__shade" aria-hidden="true"></div>
       <div class="hero__copy">
         <p class="brand-mark">ЯРУС</p>
         <h1>Торт собирается, пока вы листаете</h1>
-        <p class="hero__lead">Кадры из вашего ролика: от пустого стола до глазури и инжира. Скролл = монтажный стол.</p>
-        <a class="cta" href="#cake">Собрать торт</a>
+        <p class="hero__lead">Скролл крутит ролик как таймлайн в монтажке — плавно вперёд и назад.</p>
+        <a class="cta" href="#cake">Смотреть сборку</a>
       </div>
       <p class="scroll-hint" data-scroll-hint>Листайте вниз</p>
     </section>
 
     <section class="intro">
       <p class="intro__label">Техника</p>
-      <h2>60 кадров одной съёмки. Соседние кадры мягко смешиваются.</h2>
-      <p>Ролик нарезан плотнее. Скролл сглажен: прогресс догоняет палец плавно, на экране всегда непрерывное движение торта.</p>
+      <h2>Не слайдшоу. Настоящий video scrub.</h2>
+      <p>Ролик перекодирован с ключевым кадром на каждый фрейм — скролл ведёт <code>currentTime</code> как ползунок плеера.</p>
     </section>
 
     <section class="scrub" id="cake" aria-label="Сборка торта">
       <div class="scrub__pin">
         <div class="scrub__stage">
-          <canvas class="scrub__canvas" data-reel="cake" width="1280" height="720" role="img" aria-label="Сборка торта по скроллу"></canvas>
+          <video
+            class="scrub__video"
+            data-scrub-video
+            muted
+            playsinline
+            preload="auto"
+            poster="frames/cake/poster.jpg"
+            disablepictureinpicture
+          >
+            <source src="media/cake-scrub.mp4" type="video/mp4" />
+          </video>
           <div class="scrub__progress"><i data-cake-bar></i></div>
         </div>
         <aside class="scrub__panel">
           <p class="eyebrow">Сборка · торт</p>
-          <p class="counter"><span data-cake-num>01</span><span class="counter__sep">/</span><span data-cake-total>60</span></p>
+          <p class="counter"><span data-cake-time>0.0</span><span class="counter__sep">s</span></p>
           <h2 data-cake-title>Пустой стол</h2>
-          <p class="scrub__text" data-cake-text>Поворотный диск готов. Дальше появятся коржи, крем, джем и финишная глазурь.</p>
+          <p class="scrub__text" data-cake-text>Поворотный диск готов. Листайте — торт соберётся как в видео.</p>
           <ul class="ticks" data-cake-ticks>
             <li class="is-on">Стол</li>
             <li>Коржи</li>
@@ -78,7 +88,7 @@
       </div>
       <div class="offer__cta-row">
         <a class="cta cta--dark" href="mailto:hello@yarus.demo">Обсудить проект</a>
-        <p class="offer__note">Учебное демо для портфолио. Кадры из предоставленного ролика сборки торта.</p>
+        <p class="offer__note">Учебное демо. Ролик предоставлен для портфолио.</p>
       </div>
     </section>
   </main>
@@ -86,7 +96,7 @@
   <footer class="foot">
     <div>
       <strong>ЯРУС</strong>
-      <span>scroll frames · учебное демо · не оферта</span>
+      <span>video scrub · учебное демо · не оферта</span>
     </div>
     <a href="privacy.html">Политика ПДн</a>
   </footer>
