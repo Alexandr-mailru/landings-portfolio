@@ -60,7 +60,7 @@
     let target = 0;
     let current = 0;
     let lastCopy = "";
-    let seeking = false;
+    let lastSet = -1;
 
     const updateUi = (p) => {
       if (timeEl) timeEl.textContent = (p * duration).toFixed(1);
@@ -85,27 +85,19 @@
     };
 
     const applyTime = (p) => {
-      const t = clamp(p) * Math.max(0, duration - 0.04);
-      if (Math.abs(video.currentTime - t) < 0.012) return;
-      if (seeking) return;
-      seeking = true;
-      const onSeeked = () => {
-        seeking = false;
-        video.removeEventListener("seeked", onSeeked);
-      };
-      video.addEventListener("seeked", onSeeked, { once: true });
+      const t = clamp(p) * Math.max(0, duration - 0.05);
+      // skip tiny seeks to avoid decoder thrash
+      if (Math.abs(t - lastSet) < 0.008) return;
+      lastSet = t;
       try {
         video.currentTime = t;
-      } catch (_) {
-        seeking = false;
-      }
+      } catch (_) {}
     };
 
-    // RAF loop: smooth chase like video playback
+    // RAF loop: smooth chase — feels like watching / scrubbing a timeline
     const tick = () => {
-      // higher catch-up for snappier-but-still-liquid feel
-      current = lerp(current, target, 0.22);
-      if (Math.abs(current - target) < 0.00008) current = target;
+      current = lerp(current, target, 0.28);
+      if (Math.abs(current - target) < 0.00005) current = target;
       applyTime(current);
       updateUi(current);
       requestAnimationFrame(tick);
