@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ЯРУС — сборка торта по скроллу</title>
-  <meta name="description" content="ЯРУС: scroll-scrub видео сборки торта — как просмотр ролика." />
+  <title>ЯРУС — шесть этапов сборки торта</title>
+  <meta name="description" content="ЯРУС: стол → коржи → начинка → крем → глазурь → готово. Scroll-scrub видео с понятными этапами." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
 </head>
-<body>
+<body data-stage="stol">
   <a class="skip" href="#main">К содержанию</a>
 
   <header class="top" data-top>
     <a class="brand" href="#hero">ЯРУС</a>
     <nav aria-label="Разделы">
-      <a href="#cake">Сборка</a>
-      <a href="#offer">Для компаний</a>
+      <a href="#cake">Этапы</a>
+      <a href="#map">Карта сборки</a>
     </nav>
   </header>
 
@@ -27,20 +27,16 @@
       <div class="hero__shade" aria-hidden="true"></div>
       <div class="hero__copy">
         <p class="brand-mark">ЯРУС</p>
-        <h1>Торт собирается, пока вы листаете</h1>
-        <p class="hero__lead">Скролл крутит ролик как таймлайн в монтажке — плавно вперёд и назад.</p>
-        <a class="cta" href="#cake">Смотреть сборку</a>
+        <h1>Шесть ярусов смысла</h1>
+        <p class="hero__lead">От пустого стола до инжира на глазури — каждый этап читается отдельно, а скролл крутит ролик как монтажный таймлайн.</p>
+        <a class="cta" href="#cake">Начать со стола</a>
       </div>
-      <p class="scroll-hint" data-scroll-hint>Листайте вниз</p>
+      <ol class="hero__steps" aria-hidden="true">
+        <li>Стол</li><li>Коржи</li><li>Начинка</li><li>Крем</li><li>Глазурь</li><li>Готово</li>
+      </ol>
     </section>
 
-    <section class="intro">
-      <p class="intro__label">Техника</p>
-      <h2>Не слайдшоу. Настоящий video scrub.</h2>
-      <p>Ролик перекодирован с ключевым кадром на каждый фрейм — скролл ведёт <code>currentTime</code> как ползунок плеера.</p>
-    </section>
-
-    <section class="scrub" id="cake" aria-label="Сборка торта">
+    <section class="scrub" id="cake" aria-label="Сборка торта по этапам">
       <div class="scrub__pin">
         <div class="scrub__stage">
           <video
@@ -54,49 +50,141 @@
           >
             <source src="media/cake-scrub.mp4" type="video/mp4" />
           </video>
-          <div class="scrub__progress"><i data-cake-bar></i></div>
+          <div class="scrub__chrome">
+            <p class="scrub__badge" data-stage-badge>01 · Стол</p>
+            <div class="scrub__timeline" data-timeline role="slider" aria-label="Прогресс сборки" aria-valuemin="0" aria-valuemax="100">
+              <div class="scrub__segments" data-segments></div>
+              <i data-cake-bar></i>
+            </div>
+          </div>
         </div>
-        <aside class="scrub__panel">
-          <p class="eyebrow">Сборка · торт</p>
-          <p class="counter"><span data-cake-time>0.0</span><span class="counter__sep">s</span></p>
-          <h2 data-cake-title>Пустой стол</h2>
-          <p class="scrub__text" data-cake-text>Поворотный диск готов. Листайте — торт соберётся как в видео.</p>
-          <ul class="ticks" data-cake-ticks>
-            <li class="is-on">Стол</li>
-            <li>Коржи</li>
-            <li>Начинка</li>
-            <li>Крем</li>
-            <li>Глазурь</li>
-            <li>Готово</li>
-          </ul>
+
+        <aside class="scrub__panel" data-panel>
+          <p class="eyebrow"><span data-stage-index>01</span> / 06</p>
+          <p class="stage-kicker" data-stage-kicker>Основа сцены</p>
+          <h2 data-cake-title>Стол</h2>
+          <p class="scrub__text" data-cake-text>Пустой поворотный диск. Здесь начинается любая кондитерская сборка — чистая сцена без декора.</p>
+          <p class="stage-detail" data-stage-detail>Металл · студийный свет · нулевая высота торта</p>
+
+          <ol class="chapters" data-chapters aria-label="Этапы сборки">
+            <li>
+              <button type="button" data-seek="0" data-id="stol" class="is-active">
+                <img src="frames/stages/01-stol.jpg" alt="" width="120" height="80" />
+                <span>
+                  <em>01</em>
+                  <strong>Стол</strong>
+                  <small>Пустая сцена</small>
+                </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" data-seek="0.14" data-id="korzhi">
+                <img src="frames/stages/02-korzhi.jpg" alt="" width="120" height="80" />
+                <span>
+                  <em>02</em>
+                  <strong>Коржи</strong>
+                  <small>Несущие слои</small>
+                </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" data-seek="0.30" data-id="nachinka">
+                <img src="frames/stages/03-nachinka.jpg" alt="" width="120" height="80" />
+                <span>
+                  <em>03</em>
+                  <strong>Начинка</strong>
+                  <small>Крем + джем</small>
+                </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" data-seek="0.48" data-id="krem">
+                <img src="frames/stages/04-krem.jpg" alt="" width="120" height="80" />
+                <span>
+                  <em>04</em>
+                  <strong>Крем</strong>
+                  <small>Обтяжка боков</small>
+                </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" data-seek="0.66" data-id="glazur">
+                <img src="frames/stages/05-glazur.jpg" alt="" width="120" height="80" />
+                <span>
+                  <em>05</em>
+                  <strong>Глазурь</strong>
+                  <small>Шоколадные подтёки</small>
+                </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" data-seek="0.84" data-id="gotovo">
+                <img src="frames/stages/06-gotovo.jpg" alt="" width="120" height="80" />
+                <span>
+                  <em>06</em>
+                  <strong>Готово</strong>
+                  <small>Инжир и розмарин</small>
+                </span>
+              </button>
+            </li>
+          </ol>
         </aside>
       </div>
     </section>
 
+    <section class="map" id="map">
+      <div class="map__intro">
+        <p class="eyebrow">Карта сборки</p>
+        <h2>Зачем шесть этапов, а не один ролик</h2>
+        <p>У каждого шага своя задача в кухне и на лендинге: доверие, аппетит, техника, финиш.</p>
+      </div>
+      <div class="map__rail">
+        <article data-map="stol">
+          <span class="map__n">01</span>
+          <h3>Стол</h3>
+          <p>Чистая сцена. Клиент понимает масштаб заготовки ещё до первого коржа.</p>
+        </article>
+        <article data-map="korzhi">
+          <span class="map__n">02</span>
+          <h3>Коржи</h3>
+          <p>Несущая конструкция торта. Здесь читается текстура бисквита и высота ярусов.</p>
+        </article>
+        <article data-map="nachinka">
+          <span class="map__n">03</span>
+          <h3>Начинка</h3>
+          <p>Крем и джем между слоями — вкус, который не видно снаружи, но решает характер десерта.</p>
+        </article>
+        <article data-map="krem">
+          <span class="map__n">04</span>
+          <h3>Крем</h3>
+          <p>Обтяжка боков. Контроль формы и «белый холст» под глазурь.</p>
+        </article>
+        <article data-map="glazur">
+          <span class="map__n">05</span>
+          <h3>Глазурь</h3>
+          <p>Шоколадные подтёки — драматургия финиша, момент «вау» в кадре.</p>
+        </article>
+        <article data-map="gotovo">
+          <span class="map__n">06</span>
+          <h3>Готово</h3>
+          <p>Инжир и розмарин. Точка конверсии: торт уже хочется заказать.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="offer" id="offer">
-      <div class="offer__grid">
-        <div>
-          <p class="eyebrow">Формат</p>
-          <h2>Тот же приём — для вашего продукта</h2>
-          <p class="offer__lead">Даёте ролик с одной камеры — получаете лендинг, где клиент сам «собирает» изделие скроллом.</p>
-        </div>
-        <ul class="offer__list">
-          <li><strong>Food</strong><span>десерты, блюда, упаковка</span></li>
-          <li><strong>Product</strong><span>сборка устройства</span></li>
-          <li><strong>Build</strong><span>стройка / ремонт по этапам</span></li>
-        </ul>
-      </div>
-      <div class="offer__cta-row">
-        <a class="cta cta--dark" href="mailto:hello@yarus.demo">Обсудить проект</a>
-        <p class="offer__note">Учебное демо. Ролик предоставлен для портфолио.</p>
-      </div>
+      <p class="eyebrow">Формат</p>
+      <h2>Ваш процесс — такими же ярусами смысла</h2>
+      <p class="offer__lead">Снимаете с одной камеры, режем на этапы, вешаем на скролл. Клиент сам собирает продукт.</p>
+      <a class="cta cta--dark" href="mailto:hello@yarus.demo">Обсудить проект</a>
+      <p class="offer__note">Учебное демо для портфолио.</p>
     </section>
   </main>
 
   <footer class="foot">
     <div>
       <strong>ЯРУС</strong>
-      <span>video scrub · учебное демо · не оферта</span>
+      <span>шесть этапов · video scrub · демо</span>
     </div>
     <a href="privacy.html">Политика ПДн</a>
   </footer>
