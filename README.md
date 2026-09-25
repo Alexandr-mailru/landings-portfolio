@@ -24,7 +24,7 @@
 | [ƒомашн€€ еда](https://alexandr-mailru.github.io/landings-portfolio/04-domashnyaya-eda/) | Ћендинг HTML/CSS Ч кулинари€ Ј мультистраничный Ј ‘«?152 Ј демо |
 | [—Ћќ…](https://alexandr-mailru.github.io/landings-portfolio/05-sloy/) | Ћендинг HTML/CSS Ч интерьер Ј immersive Ј адаптив Ј демо |
 | [ƒќћЌј](https://alexandr-mailru.github.io/landings-portfolio/06-domna/) | ћультистраничный HTML под Tilda Zero Ч промреконструкци€ Ј кейсы Ј ‘«?152 Ј демо |
-| [я–”—](https://alexandr-mailru.github.io/landings-portfolio/07-yarus/) | Scroll-сборка торта из ролика Ч 36 кадров Ј GSAP Ј демо |
+| [я–”—](https://alexandr-mailru.github.io/landings-portfolio/07-yarus/) | Ўесть страниц сборки торта Ч video scrub Ј GSAP ScrollTrigger Ј демо |
 
 ## јвтор
 
