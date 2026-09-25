@@ -1,0 +1,5 @@
+_tools/
+_src/
+_preview-*.jpg
+node_modules/
+*.tgz

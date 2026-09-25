@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ЯРУС — сборка торта по скроллу</title>
+  <meta name="description" content="ЯРУС: scroll-triggered сборка торта из реального ролика. Один кадр за раз." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+
+  <header class="top" data-top>
+    <a class="brand" href="#hero">ЯРУС</a>
+    <nav aria-label="Разделы">
+      <a href="#cake">Сборка</a>
+      <a href="#offer">Для компаний</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="hero">
+      <img class="hero__photo" src="frames/cake/36.jpg" alt="" width="1280" height="720" fetchpriority="high" />
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="hero__copy">
+        <p class="brand-mark">ЯРУС</p>
+        <h1>Торт собирается, пока вы листаете</h1>
+        <p class="hero__lead">Кадры из вашего ролика: от пустого стола до глазури и инжира. Скролл = монтажный стол.</p>
+        <a class="cta" href="#cake">Собрать торт</a>
+      </div>
+      <p class="scroll-hint" data-scroll-hint>Листайте вниз</p>
+    </section>
+
+    <section class="intro">
+      <p class="intro__label">Техника</p>
+      <h2>36 кадров одной съёмки. Без наслоения чужих ракурсов.</h2>
+      <p>Ролик нарезан на последовательность JPG. На экране всегда <strong>один кадр</strong> — скролл перематывает этапы сборки.</p>
+    </section>
+
+    <section class="scrub" id="cake" aria-label="Сборка торта">
+      <div class="scrub__pin">
+        <div class="scrub__stage">
+          <canvas class="scrub__canvas" data-reel="cake" width="1280" height="720" role="img" aria-label="Сборка торта по скроллу"></canvas>
+          <div class="scrub__progress"><i data-cake-bar></i></div>
+        </div>
+        <aside class="scrub__panel">
+          <p class="eyebrow">Сборка · торт</p>
+          <p class="counter"><span data-cake-num>01</span><span class="counter__sep">/</span><span data-cake-total>36</span></p>
+          <h2 data-cake-title>Пустой стол</h2>
+          <p class="scrub__text" data-cake-text>Поворотный диск готов. Дальше появятся коржи, крем, джем и финишная глазурь.</p>
+          <ul class="ticks" data-cake-ticks>
+            <li class="is-on">Стол</li>
+            <li>Коржи</li>
+            <li>Начинка</li>
+            <li>Крем</li>
+            <li>Глазурь</li>
+            <li>Готово</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="offer" id="offer">
+      <div class="offer__grid">
+        <div>
+          <p class="eyebrow">Формат</p>
+          <h2>Тот же приём — для вашего продукта</h2>
+          <p class="offer__lead">Даёте ролик с одной камеры — получаете лендинг, где клиент сам «собирает» изделие скроллом.</p>
+        </div>
+        <ul class="offer__list">
+          <li><strong>Food</strong><span>десерты, блюда, упаковка</span></li>
+          <li><strong>Product</strong><span>сборка устройства</span></li>
+          <li><strong>Build</strong><span>стройка / ремонт по этапам</span></li>
+        </ul>
+      </div>
+      <div class="offer__cta-row">
+        <a class="cta cta--dark" href="mailto:hello@yarus.demo">Обсудить проект</a>
+        <p class="offer__note">Учебное демо для портфолио. Кадры из предоставленного ролика сборки торта.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div>
+      <strong>ЯРУС</strong>
+      <span>scroll frames · учебное демо · не оферта</span>
+    </div>
+    <a href="privacy.html">Политика ПДн</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
