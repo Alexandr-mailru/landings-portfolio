@@ -220,6 +220,21 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   object-fit: cover;
   transform: scale(1.04);
   transition: filter 0.7s var(--ease-out);
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+/* Hide native mobile chrome — real phones otherwise show a player UI */
+.journey__video::-webkit-media-controls,
+.journey__video::-webkit-media-controls-enclosure,
+.journey__video::-webkit-media-controls-start-playback-button,
+.journey__video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 body.is-turning .journey__video {
   filter: brightness(0.72) saturate(0.9);

@@ -97,7 +97,43 @@
       }
       video.addEventListener("loadedmetadata", () => resolve(), { once: true });
       video.addEventListener("error", () => resolve(), { once: true });
+      /* iOS sometimes never fires if preload stalls */
+      setTimeout(() => resolve(), 2500);
     });
+  }
+
+  /** Unlock currentTime seeks on iOS/Android without showing a player */
+  function armInlineVideo(video) {
+    video.controls = false;
+    video.removeAttribute("controls");
+    video.muted = true;
+    video.defaultMuted = true;
+    video.setAttribute("muted", "");
+    video.playsInline = true;
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+    video.disablePictureInPicture = true;
+    if ("disableRemotePlayback" in video) video.disableRemotePlayback = true;
+
+    const unlock = () => {
+      const p = video.play();
+      if (p && typeof p.then === "function") {
+        p.then(() => {
+          video.pause();
+        }).catch(() => {});
+      } else {
+        try { video.pause(); } catch (_) {}
+      }
+    };
+
+    /* Gesture unlock — required before reliable seeking on many phones */
+    const onceOpts = { once: true, passive: true };
+    window.addEventListener("touchstart", unlock, onceOpts);
+    window.addEventListener("scroll", unlock, onceOpts);
+    window.addEventListener("click", unlock, onceOpts);
+
+    /* Try muted autoplay unlock without waiting for gesture */
+    unlock();
   }
 
   async function init() {
@@ -122,9 +158,8 @@
       segments.innerHTML = stages.map(() => "<span></span>").join("");
     }
 
+    armInlineVideo(video);
     video.pause();
-    video.muted = true;
-    video.playsInline = true;
     try {
       video.load();
     } catch (_) {}
@@ -136,6 +171,7 @@
     let lastId = "";
     let lastSet = -1;
     let turnTimer = 0;
+    let seeking = false;
 
     const renderFacts = (facts) => {
       if (!factsEl) return;
@@ -186,13 +222,29 @@
     };
 
     const applyTime = (p) => {
+      if (seeking) return;
       const t = clamp(p) * Math.max(0, duration - 0.05);
-      if (Math.abs(t - lastSet) < 0.008) return;
+      if (Math.abs(t - lastSet) < 0.012) return;
       lastSet = t;
       try {
+        /* Some mobile browsers reject rapid seeks while "playing" */
+        if (!video.paused) video.pause();
+        video.controls = false;
+        seeking = true;
         video.currentTime = t;
-      } catch (_) {}
+      } catch (_) {
+        seeking = false;
+      }
     };
+
+    video.addEventListener("seeked", () => {
+      seeking = false;
+    });
+    video.addEventListener("playing", () => {
+      /* Never let native playback UI take over the scrub */
+      video.pause();
+      video.controls = false;
+    });
 
     const tick = () => {
       current = lerp(current, target, 0.22);
@@ -202,7 +254,9 @@
       requestAnimationFrame(tick);
     };
 
-    video.currentTime = 0;
+    try {
+      video.currentTime = 0;
+    } catch (_) {}
     applyStageUi(0);
     requestAnimationFrame(tick);
 
@@ -216,12 +270,11 @@
     });
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
-      target = 1;
-      current = 1;
-      applyTime(1);
-      applyStageUi(1);
-      video.controls = true;
+    const hasGsap = typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined";
+
+    /* IMPORTANT: never enable video.controls — that is the native phone player UI */
+    if (!hasGsap) {
+      /* Minimal fallback: pager + progress still work via tick/seekTo */
       return;
     }
 
@@ -237,26 +290,43 @@
       });
     }
 
-    gsap.to(".hero__photo", {
-      scale: 1.1,
-      ease: "none",
-      scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true },
-    });
+    if (!reduce) {
+      gsap.to(".hero__photo", {
+        scale: 1.1,
+        ease: "none",
+        scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true },
+      });
+    }
 
-    /* Non-linear scroll: denser dwell on each of 6 "pages" */
+    /* Shorter scroll distance on small screens — less fatigue, same 6 pages */
+    const isNarrow = window.matchMedia("(max-width: 700px)").matches;
+    if (isNarrow) {
+      section.style.height = reduce ? "420vh" : "640vh";
+    }
+
     ScrollTrigger.create({
       trigger: section,
       start: "top top",
       end: "bottom bottom",
-      scrub: 1.15,
+      scrub: reduce ? true : 1.15,
       onUpdate: (self) => {
         const raw = self.progress;
+        if (reduce) {
+          /* Snap to stage centers — less continuous seeking on low-power phones */
+          const i = Math.min(stages.length - 1, Math.floor(raw * stages.length));
+          target = stages[i].seek + (stages[i].end - stages[i].at) * 0.35;
+          return;
+        }
         const n = stages.length;
         const slot = raw * n;
         const i = Math.min(n - 1, Math.floor(slot));
         const local = slot - i;
-        /* Ease into each page, hold in the middle of the chapter */
-        const held = local < 0.18 ? local / 0.18 * 0.12 : local > 0.82 ? 0.88 + ((local - 0.82) / 0.18) * 0.12 : 0.12 + ((local - 0.18) / 0.64) * 0.76;
+        const held =
+          local < 0.18
+            ? (local / 0.18) * 0.12
+            : local > 0.82
+              ? 0.88 + ((local - 0.82) / 0.18) * 0.12
+              : 0.12 + ((local - 0.18) / 0.64) * 0.76;
         const s = stages[i];
         const nextEnd = i < n - 1 ? stages[i + 1].at : 1;
         target = lerp(s.at, nextEnd, held);
