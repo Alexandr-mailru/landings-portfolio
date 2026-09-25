@@ -91,24 +91,26 @@ $phone   = atrium_mod( 'atrium_phone', '+7 (812) 000-00-00' );
 				array(
 					'title' => __( 'Дом у залива', 'atrium' ),
 					'meta'  => '2024 · 280 м² · Курортный',
-					'img'   => 'project-1.jpg',
+					'img'   => 'house-bay.jpg',
 				),
 				array(
 					'title' => __( 'Квартира-галерея', 'atrium' ),
 					'meta'  => '2025 · 142 м² · Центр',
-					'img'   => 'project-2.jpg',
+					'img'   => 'apartment-gallery.jpg',
 				),
 				array(
 					'title' => __( 'Павильон в лесу', 'atrium' ),
 					'meta'  => '2023 · 96 м² · Карелия',
-					'img'   => 'project-3.jpg',
+					'img'   => 'pavilion-forest.jpg',
 				),
 			);
 			foreach ( $demos as $i => $demo ) :
+				$img_url = ATRIUM_URI . '/assets/img/' . $demo['img'];
 				?>
 				<article class="project-card">
 					<a class="project-card__link" href="#contact">
 						<div class="project-card__media tone-<?php echo esc_attr( (string) ( $i + 1 ) ); ?>">
+							<img src="<?php echo esc_url( $img_url ); ?>" alt="" width="900" height="1200" loading="lazy" />
 							<span class="project-card__index">0<?php echo esc_html( (string) ( $i + 1 ) ); ?></span>
 						</div>
 						<div class="project-card__body">
