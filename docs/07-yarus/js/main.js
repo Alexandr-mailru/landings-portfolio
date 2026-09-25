@@ -1,17 +1,19 @@
 (() => {
-  const COUNT = 36;
+  const COUNT = 60;
 
   const copy = [
     { at: 0, title: "Пустой стол", text: "Поворотный диск готов. Дальше появятся коржи, крем, джем и финишная глазурь." },
-    { at: 0.12, title: "Первый корж", text: "Основание торта на диске — несущий слой." },
-    { at: 0.28, title: "Крем и джем", text: "Начинка ложится ровным слоем между коржами." },
-    { at: 0.45, title: "Сборка ярусов", text: "Коржи нарастают вверх — силуэт торта собирается." },
-    { at: 0.62, title: "Обтяжка кремом", text: "Бока закрываются белым кремом." },
-    { at: 0.78, title: "Глазурь", text: "Шоколадные подтёки фиксируют финиш." },
-    { at: 0.92, title: "Готово", text: "Инжир и розмарин. Сборка завершена." },
+    { at: 0.1, title: "Первый корж", text: "Основание торта на диске — несущий слой." },
+    { at: 0.25, title: "Крем и джем", text: "Начинка ложится ровным слоем между коржами." },
+    { at: 0.42, title: "Сборка ярусов", text: "Коржи нарастают вверх — силуэт торта собирается." },
+    { at: 0.58, title: "Обтяжка кремом", text: "Бока закрываются белым кремом." },
+    { at: 0.75, title: "Глазурь", text: "Шоколадные подтёки фиксируют финиш." },
+    { at: 0.9, title: "Готово", text: "Инжир и розмарин. Сборка завершена." },
   ];
 
   const pad = (n) => String(n).padStart(2, "0");
+  const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+  const lerp = (a, b, t) => a + (b - a) * t;
 
   function pick(list, p) {
     let cur = list[0];
@@ -52,25 +54,53 @@
     const rect = parent.getBoundingClientRect();
     const w = Math.max(320, Math.floor(rect.width));
     const h = Math.max(240, Math.floor(rect.height));
-    canvas.style.width = `${w}px`;
-    canvas.style.height = `${h}px`;
-    canvas.width = Math.floor(w * dpr);
-    canvas.height = Math.floor(h * dpr);
+    if (canvas._cssW !== w || canvas._cssH !== h) {
+      canvas.style.width = `${w}px`;
+      canvas.style.height = `${h}px`;
+      canvas.width = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
+      canvas._cssW = w;
+      canvas._cssH = h;
+    }
     const ctx = canvas.getContext("2d");
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     return { ctx, w, h };
   }
 
-  function drawFrame(canvas, images, index) {
-    const { ctx, w, h } = fitCanvas(canvas);
-    const img = images[Math.max(0, Math.min(images.length - 1, index))];
-    ctx.fillStyle = "#0c0f0d";
-    ctx.fillRect(0, 0, w, h);
+  function coverDraw(ctx, img, w, h, zoom = 1) {
     if (!img || !img.naturalWidth) return;
-    const scale = Math.max(w / img.naturalWidth, h / img.naturalHeight);
+    const scale = Math.max(w / img.naturalWidth, h / img.naturalHeight) * zoom;
     const dw = img.naturalWidth * scale;
     const dh = img.naturalHeight * scale;
     ctx.drawImage(img, (w - dw) / 2, (h - dh) / 2, dw, dh);
+  }
+
+  /** Blend only neighbouring frames of the same shot → butter-smooth scrub. */
+  function drawBlended(canvas, images, frameFloat, progress) {
+    const { ctx, w, h } = fitCanvas(canvas);
+    const max = images.length - 1;
+    const f = clamp(frameFloat, 0, max);
+    const i0 = Math.floor(f);
+    const i1 = Math.min(max, i0 + 1);
+    const t = f - i0;
+    const zoom = 1.02 + progress * 0.03;
+
+    ctx.fillStyle = "#0a0c0b";
+    ctx.fillRect(0, 0, w, h);
+
+    coverDraw(ctx, images[i0], w, h, zoom);
+    if (t > 0.001 && images[i1]) {
+      ctx.globalAlpha = t;
+      coverDraw(ctx, images[i1], w, h, zoom);
+      ctx.globalAlpha = 1;
+    }
+
+    // soft vignette for polish
+    const g = ctx.createRadialGradient(w * 0.5, h * 0.45, h * 0.2, w * 0.5, h * 0.5, h * 0.78);
+    g.addColorStop(0, "rgba(0,0,0,0)");
+    g.addColorStop(1, "rgba(0,0,0,0.28)");
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, w, h);
   }
 
   async function init() {
@@ -87,27 +117,63 @@
     if (total) total.textContent = pad(COUNT);
 
     const images = await loadFrames();
-    let frameIndex = 0;
 
-    const apply = (progress) => {
-      const p = Math.max(0, Math.min(1, progress));
-      const idx = Math.round(p * (COUNT - 1));
-      frameIndex = idx;
-      drawFrame(canvas, images, idx);
-      if (num) num.textContent = pad(idx + 1);
+    let target = 0;
+    let current = 0;
+    let lastCopyKey = "";
+    let raf = 0;
+
+    const updateCopy = (p) => {
+      const rounded = Math.round(p * (COUNT - 1)) + 1;
+      if (num) num.textContent = pad(rounded);
       if (bar) bar.style.width = `${p * 100}%`;
       const c = pick(copy, p);
-      if (title) title.textContent = c.title;
-      if (text) text.textContent = c.text;
+      const key = c.title;
+      if (key !== lastCopyKey) {
+        lastCopyKey = key;
+        if (title) {
+          title.style.opacity = "0";
+          title.style.transform = "translateY(6px)";
+          requestAnimationFrame(() => {
+            title.textContent = c.title;
+            text && (text.textContent = c.text);
+            title.style.opacity = "1";
+            title.style.transform = "translateY(0)";
+          });
+        } else if (text) {
+          text.textContent = c.text;
+        }
+      }
       setTicks(ticks, p);
     };
 
-    apply(0);
-    window.addEventListener("resize", () => drawFrame(canvas, images, frameIndex));
+    const tick = () => {
+      // exponential smooth chase — liquid scrub without losing reverse
+      current = lerp(current, target, 0.14);
+      if (Math.abs(current - target) < 0.00015) current = target;
+      const frameFloat = current * (COUNT - 1);
+      drawBlended(canvas, images, frameFloat, current);
+      updateCopy(current);
+      raf = requestAnimationFrame(tick);
+    };
+
+    const setProgress = (p) => {
+      target = clamp(p);
+    };
+
+    setProgress(0);
+    drawBlended(canvas, images, 0, 0);
+    updateCopy(0);
+    raf = requestAnimationFrame(tick);
+
+    window.addEventListener("resize", () => {
+      drawBlended(canvas, images, current * (COUNT - 1), current);
+    });
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
-      apply(1);
+      setProgress(1);
+      current = 1;
       return;
     }
 
@@ -125,20 +191,21 @@
 
     gsap.to("[data-scroll-hint]", {
       autoAlpha: 0,
-      scrollTrigger: { trigger: "#hero", start: "top top", end: "+=120", scrub: true },
+      scrollTrigger: { trigger: "#hero", start: "top top", end: "+=160", scrub: true },
     });
 
-    const state = { p: 0 };
-    gsap.to(state, {
-      p: 1,
+    gsap.to(".hero__photo", {
+      scale: 1.08,
       ease: "none",
-      scrollTrigger: {
-        trigger: section,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 0.4,
-        onUpdate: (self) => apply(self.progress),
-      },
+      scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true },
+    });
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 0.85,
+      onUpdate: (self) => setProgress(self.progress),
     });
   }
 
