@@ -1,31 +1,32 @@
-# Портфолио
+# пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-Хаб учебных проектов: Django и Next.js приложения, лендинги на HTML/CSS/JS. Публикация через GitHub Pages из папки `docs/`.
+пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: Django пїЅ Next.js пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ HTML/CSS/JS. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ GitHub Pages пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ `docs/`.
 
-**Сайт:** [alexandr-mailru.github.io/landings-portfolio](https://alexandr-mailru.github.io/landings-portfolio/)
+**пїЅпїЅпїЅпїЅ:** [alexandr-mailru.github.io/landings-portfolio](https://alexandr-mailru.github.io/landings-portfolio/)
 
-## Приложения (живые демо)
+## пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ)
 
-| Проект | Описание |
+| пїЅпїЅпїЅпїЅпїЅпїЅ | пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ |
 |--------|----------|
-| [СнабОфис](https://alexandr-mailru.github.io/landings-portfolio/snab-office/) | Магазин на Next.js — каталог · корзина · заказы · 1С CommerceML · ФЗ?152 · демо |
-| [Контур CRM](https://alexandr-mailru.github.io/landings-portfolio/kontur-crm/) | CRM на Django — клиенты · сделки · воронка · ФЗ?152 · демо |
-| [Северный магазин](https://alexandr-mailru.github.io/landings-portfolio/severny-shop/) | Магазин на Django — каталог · корзина · заказы · ФЗ?152 · демо |
-| [Остатки > Ужин](https://alexandr-mailru.github.io/landings-portfolio/ostratki-uzhin/) | Сервис на Django — рецепты · API · PDF · ФЗ?152 · демо |
-| [Клуб собак](https://alexandr-mailru.github.io/landings-portfolio/dogs-club/) | Платформа на Django — собаки · отзывы · модерация · ФЗ?152 · демо |
+| [пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ](https://alexandr-mailru.github.io/landings-portfolio/snab-office/) | пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ Next.js пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ 1пїЅ CommerceML пїЅ пїЅпїЅ?152 пїЅ пїЅпїЅпїЅпїЅ |
+| [пїЅпїЅпїЅпїЅпїЅпїЅ CRM](https://alexandr-mailru.github.io/landings-portfolio/kontur-crm/) | CRM пїЅпїЅ Django пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ?152 пїЅ пїЅпїЅпїЅпїЅ |
+| [пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ](https://alexandr-mailru.github.io/landings-portfolio/severny-shop/) | пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ Django пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ?152 пїЅ пїЅпїЅпїЅпїЅ |
+| [пїЅпїЅпїЅпїЅпїЅпїЅпїЅ > пїЅпїЅпїЅпїЅ](https://alexandr-mailru.github.io/landings-portfolio/ostratki-uzhin/) | пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ Django пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ API пїЅ PDF пїЅ пїЅпїЅ?152 пїЅ пїЅпїЅпїЅпїЅ |
+| [пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ](https://alexandr-mailru.github.io/landings-portfolio/dogs-club/) | пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ Django пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ?152 пїЅ пїЅпїЅпїЅпїЅ |
 
-## Лендинги (демо)
+## пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅ)
 
-| Проект | Описание |
+| пїЅпїЅпїЅпїЅпїЅпїЅ | пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ |
 |--------|----------|
-| [MORE](https://alexandr-mailru.github.io/landings-portfolio/01-more-studio/) | Лендинг HTML/CSS — студия красоты · тёмный люкс · адаптив · демо |
-| [ДОМ/ЛИНИЯ](https://alexandr-mailru.github.io/landings-portfolio/02-domlinia/) | Лендинг HTML/CSS — ремонт квартир · брутализм · адаптив · демо |
-| [Каюта](https://alexandr-mailru.github.io/landings-portfolio/03-kayuta/) | Лендинг HTML/CSS — ресторан · мягкий свет · адаптив · демо |
-| [Домашняя еда](https://alexandr-mailru.github.io/landings-portfolio/04-domashnyaya-eda/) | Лендинг HTML/CSS — кулинария · мультистраничный · ФЗ?152 · демо |
-| [СЛОЙ](https://alexandr-mailru.github.io/landings-portfolio/05-sloy/) | Лендинг HTML/CSS — интерьер · immersive · адаптив · демо |
-| [ДОМНА](https://alexandr-mailru.github.io/landings-portfolio/06-domna/) | Мультистраничный HTML под Tilda Zero — промреконструкция · кейсы · ФЗ?152 · демо |
-| [ЯРУС](https://alexandr-mailru.github.io/landings-portfolio/07-yarus/) | Шесть страниц сборки торта — video scrub · GSAP ScrollTrigger · демо |
+| [MORE](https://alexandr-mailru.github.io/landings-portfolio/01-more-studio/) | пїЅпїЅпїЅпїЅпїЅпїЅпїЅ HTML/CSS пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ |
+| [пїЅпїЅпїЅ/пїЅпїЅпїЅпїЅпїЅ](https://alexandr-mailru.github.io/landings-portfolio/02-domlinia/) | пїЅпїЅпїЅпїЅпїЅпїЅпїЅ HTML/CSS пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ |
+| [пїЅпїЅпїЅпїЅпїЅ](https://alexandr-mailru.github.io/landings-portfolio/03-kayuta/) | пїЅпїЅпїЅпїЅпїЅпїЅпїЅ HTML/CSS пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ |
+| [пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ](https://alexandr-mailru.github.io/landings-portfolio/04-domashnyaya-eda/) | пїЅпїЅпїЅпїЅпїЅпїЅпїЅ HTML/CSS пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ?152 пїЅ пїЅпїЅпїЅпїЅ |
+| [пїЅпїЅпїЅпїЅ](https://alexandr-mailru.github.io/landings-portfolio/05-sloy/) | пїЅпїЅпїЅпїЅпїЅпїЅпїЅ HTML/CSS пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ immersive пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ |
+| [пїЅпїЅпїЅпїЅпїЅ](https://alexandr-mailru.github.io/landings-portfolio/06-domna/) | пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ HTML пїЅпїЅпїЅ Tilda Zero пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ?152 пїЅ пїЅпїЅпїЅпїЅ |
+| [пїЅпїЅпїЅпїЅ](https://alexandr-mailru.github.io/landings-portfolio/07-yarus/) | пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ video scrub пїЅ GSAP ScrollTrigger пїЅ пїЅпїЅпїЅпїЅ |
 
-## Автор
+## пїЅпїЅпїЅпїЅпїЅ
 
 GitHub: **Alexandr-mailru**
+| [ATRIUM](https://alexandr-mailru.github.io/landings-portfolio/08-atrium/) | WordPress theme вЂ” architecture atelier В· CPT В· lead form В· 152-FZ В· demo |

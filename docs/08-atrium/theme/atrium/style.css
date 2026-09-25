@@ -1,0 +1,18 @@
+<?php
+/**
+ * Theme Name: ATRIUM
+ * Theme URI: https://alexandr-mailru.github.io/landings-portfolio/08-atrium/
+ * Author: Александр Гуров
+ * Author URI: https://alexandr-mailru.github.io/landings-portfolio/
+ * Description: Премиальная тема для архитектурного бюро: проекты, услуги, заявка, политика ПДн. Учебное демо для портфолио.
+ * Version: 1.0.0
+ * Requires at least: 6.0
+ * Tested up to: 6.7
+ * Requires PHP: 7.4
+ * Text Domain: atrium
+ * License: GNU General Public License v2 or later
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}

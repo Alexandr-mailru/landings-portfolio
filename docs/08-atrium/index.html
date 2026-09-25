@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ATRIUM — архитектурное бюро</title>
+  <meta name="description" content="ATRIUM: премиальная тема WordPress для архитектурного бюро. Демо для портфолио." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body class="is-front">
+  <a class="skip" href="#main">К содержанию</a>
+
+  <header class="top" data-top>
+    <a class="brand" href="#hero"><span class="brand__mark">ATRIUM</span></a>
+    <nav class="nav" aria-label="Главное">
+      <ul class="nav__list">
+        <li><a href="#projects">Проекты</a></li>
+        <li><a href="#method">Метод</a></li>
+        <li><a href="#contact">Заявка</a></li>
+      </ul>
+    </nav>
+    <a class="top__phone" href="tel:+78120000000">+7 (812) 000-00-00</a>
+    <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span>
+      <span class="visually-hidden">Меню</span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav" data-mobile-nav hidden>
+    <ul class="mobile-nav__list">
+      <li><a href="#projects">Проекты</a></li>
+      <li><a href="#method">Метод</a></li>
+      <li><a href="#contact">Заявка</a></li>
+    </ul>
+  </div>
+
+  <main id="main">
+    <section class="hero" id="hero">
+      <div class="hero__media" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80"
+          alt=""
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+        />
+        <div class="hero__fallback"></div>
+      </div>
+      <div class="hero__shade"></div>
+      <div class="hero__copy">
+        <p class="brand-mark">ATRIUM</p>
+        <h1>Архитектура света и тишины</h1>
+        <p class="hero__lead">Проектируем частные дома и интерьеры, где пространство дышит медленнее города.</p>
+        <div class="hero__cta">
+          <a class="btn btn--light" href="#contact">Обсудить участок</a>
+          <a class="btn btn--ghost" href="#projects">Смотреть проекты</a>
+        </div>
+      </div>
+      <p class="hero__scroll" aria-hidden="true">Листать</p>
+    </section>
+
+    <section class="intro" id="method">
+      <div class="intro__grid">
+        <p class="eyebrow">Метод</p>
+        <h2>Один объём. Один свет. Никакой декоративной суеты.</h2>
+        <p class="intro__text">Мы начинаем с ориентации по солнцу и маршрутов человека в доме. Материалы — камень, дерево, металл — выбираются так, чтобы стареть красиво, а не «выглядеть дорого» в первый сезон.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <span>01</span>
+          <strong>Сценарий</strong>
+          <p>Бриф, участок, ограничения. Фиксируем задачу одной фразой.</p>
+        </li>
+        <li>
+          <span>02</span>
+          <strong>Объём</strong>
+          <p>Концепция и свет. Макет, который можно оспорить за час.</p>
+        </li>
+        <li>
+          <span>03</span>
+          <strong>Деталь</strong>
+          <p>Рабочая документация и авторский надзор до сдачи.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="section-head">
+        <p class="eyebrow">Портфолио</p>
+        <h2>Избранные объекты</h2>
+      </div>
+      <div class="projects__grid">
+        <article class="project-card">
+          <a class="project-card__link" href="#contact">
+            <div class="project-card__media tone-1">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="" width="900" height="1200" loading="lazy" />
+              <span class="project-card__index">01</span>
+            </div>
+            <div class="project-card__body">
+              <h3>Дом у залива</h3>
+              <p>2024 · 280 м² · Курортный</p>
+            </div>
+          </a>
+        </article>
+        <article class="project-card">
+          <a class="project-card__link" href="#contact">
+            <div class="project-card__media tone-2">
+              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="" width="900" height="1200" loading="lazy" />
+              <span class="project-card__index">02</span>
+            </div>
+            <div class="project-card__body">
+              <h3>Квартира-галерея</h3>
+              <p>2025 · 142 м² · Центр</p>
+            </div>
+          </a>
+        </article>
+        <article class="project-card">
+          <a class="project-card__link" href="#contact">
+            <div class="project-card__media tone-3">
+              <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=900&q=80" alt="" width="900" height="1200" loading="lazy" />
+              <span class="project-card__index">03</span>
+            </div>
+            <div class="project-card__body">
+              <h3>Павильон в лесу</h3>
+              <p>2023 · 96 м² · Карелия</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="statement">
+      <blockquote>
+        <p>Хороший дом не кричит о бюджете. Он держит тишину и правильный свет в четыре часа дня.</p>
+        <cite>ATRIUM</cite>
+      </blockquote>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact__copy">
+        <p class="eyebrow">Заявка</p>
+        <h2>Расскажите о участке или объекте</h2>
+        <p>Ответим в течение одного рабочего дня. Первый созвон — 30 минут, без коммерческого давления.</p>
+        <a class="contact__phone" href="tel:+78120000000">+7 (812) 000-00-00</a>
+      </div>
+      <div class="contact__form">
+        <form class="lead" data-lead-form novalidate>
+          <div class="lead__row">
+            <label>
+              <span>Имя</span>
+              <input type="text" name="name" required autocomplete="name" />
+            </label>
+            <label>
+              <span>Телефон</span>
+              <input type="tel" name="phone" required autocomplete="tel" />
+            </label>
+          </div>
+          <label>
+            <span>E-mail</span>
+            <input type="email" name="email" autocomplete="email" />
+          </label>
+          <label>
+            <span>О проекте</span>
+            <textarea name="message" rows="4" placeholder="Тип объекта, площадь, сроки"></textarea>
+          </label>
+          <label class="lead__consent">
+            <input type="checkbox" name="consent" value="1" required />
+            <span>Согласен(на) на <a href="privacy.html">обработку персональных данных</a></span>
+          </label>
+          <button type="submit" class="btn btn--light">Отправить заявку</button>
+          <p class="lead__status" data-lead-status hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__brand">
+      <strong>ATRIUM</strong>
+      <span>Санкт-Петербург</span>
+    </div>
+    <div class="foot__links">
+      <a href="mailto:hello@atrium.demo">hello@atrium.demo</a>
+      <a href="privacy.html">Политика ПДн</a>
+      <a href="theme/">Исходник темы WP</a>
+    </div>
+    <p class="foot__note">Учебное демо: живой HTML-превью + полная тема WordPress ATRIUM в папке theme/.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
